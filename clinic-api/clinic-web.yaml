@@ -1,0 +1,27 @@
+openapi: 3.0.0
+info:
+  title: Clinic API
+  version: 0.1.9
+paths:
+  /profiles:
+    get:
+      operationId: getUserInfo
+      summary: Return a one object list with user's profile
+      responses:
+        200:
+          description: 'Return user information profile'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProfileResponse'
+components:
+  schemas:
+    ProfileResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        pwz:
+          type: string
