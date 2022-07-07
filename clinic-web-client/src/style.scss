@@ -1,0 +1,18 @@
+//$theme-colors: (
+//        "primary": #0e9096,
+//        "secondary": #6c757d,
+//        "success": #198754,
+//        "info": #7854e4,
+//        "warning": #ffc107,
+//        "danger": #ff4136
+//);
+
+$primary: #0e9096;
+$secondary: #8f5325;
+$success: #3e8d63;
+$info: #4cc5f5;
+$warning: #b8c924;
+$danger: #d62518;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
