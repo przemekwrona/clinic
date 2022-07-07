@@ -1,0 +1,104 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "id": 1,
+    "name": "Marcin",
+    "surname": "Rzeszutek",
+    "pwz": "3593247",
+    "projects": [
+      {
+        "id": 1,
+        "name": "phd-example-project",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus turpis urna, dignissim venenatis sem vitae, finibus mollis libero. Praesent elementum scelerisque quam sit amet tincidunt. Sed consectetur erat finibus neque vulputate ornare."
+      },
+      {
+        "id": 2,
+        "name": "phd-example-project-2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus turpis urna, dignissim venenatis sem vitae, finibus mollis libero. Praesent elementum scelerisque quam sit amet tincidunt. Sed consectetur erat finibus neque vulputate ornare."
+      }
+    ]
+  },
+  "patients": {
+    "patients": [
+      {
+        "id": "1",
+        "code": "WKD34",
+        "name": "Jan",
+        "surname": "Kowalski",
+        "ksadspl": [
+          {
+            "id": 1,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 2,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "code": "AMT23",
+        "name": "Justyna",
+        "surname": "Krasnystaw",
+        "ksadspl": [
+          {
+            "id": 3,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 4,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 5,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "code": "MAN12",
+        "name": "Joanna",
+        "surname": "Kwiatkowska",
+        "ksadspl": []
+      },
+      {
+        "id": "4",
+        "code": "SOR78",
+        "name": "Michał",
+        "surname": "Nowacki",
+        "ksadspl": [
+          {
+            "id": 6,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 7,
+            "name": "K-SADS-PL",
+            "date": "2022-05-02"
+          }
+        ]
+      }
+    ]
+  }
+}
