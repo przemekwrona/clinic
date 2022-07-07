@@ -17,6 +17,10 @@
         <java.version>11</java.version>
         <spring-boot.version>2.7.1</spring-boot.version>
         <lombok.version>1.18.22</lombok.version>
+        <javax-validation.version>2.0.1.Final</javax-validation.version>
+        <swagger-annotations.version>2.2.0</swagger-annotations.version>
+        <jackson-databind-nullable.version>0.2.1</jackson-databind-nullable.version>
+        <jackson-dataformat.version>2.13.3</jackson-dataformat.version>
     </properties>
 
     <modules>
@@ -37,6 +41,28 @@
                 <version>${lombok.version}</version>
                 <optional>true</optional>
             </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${javax-validation.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger.core.v3</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.openapitools</groupId>
+                <artifactId>jackson-databind-nullable</artifactId>
+                <version>${jackson-databind-nullable.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${jackson-dataformat.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
