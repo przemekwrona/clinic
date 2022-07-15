@@ -1,0 +1,99 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-table-user
+      author: pwrona
+      changes:
+        - createTable:
+            tableName: USER
+            columns:
+              - column:
+                  name: ID
+                  type: int
+              - column:
+                  name: NAME
+                  type: varchar(50)
+              - column:
+                  name: SURNAME
+                  type: varchar(50)
+              - column:
+                  name: USERNAME
+                  type: varchar(50)
+              - column:
+                  name: EMAIL
+                  type: varchar(50)
+              - column:
+                  name: PASSWORD
+                  type: varchar(50)
+        - addPrimaryKey:
+            tableName: USER
+            columnNames: ID
+            clustered: true
+            constraintName: pk_user
+  - changeSet:
+      id: create-table-role
+      author: pwrona
+      changes:
+        - createTable:
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  type: varchar(5)
+              - column:
+                  name: NAME
+                  type: varchar(20)
+              - column:
+                  name: DESCRIPTION
+                  type: varchar(250)
+        - addPrimaryKey:
+            tableName: ROLE
+            columnNames: ID
+            clustered: true
+            constraintName: pk_role
+  - changeSet:
+      id: create-table-user-role
+      author: pwrona
+      changes:
+        - createTable:
+            tableName: USER_ROLE
+            columns:
+              - column:
+                  name: USER_ID
+                  type: int
+              - column:
+                  name: ROLE_ID
+                  type: varchar(5)
+        - addForeignKeyConstraint:
+            baseColumnNames: USER_ID
+            baseTableName: USER_ROLE
+            constraintName: fk_user_and_user_role
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: USER
+            validate: true
+        - addForeignKeyConstraint:
+            baseColumnNames: ROLE_ID
+            baseTableName: USER_ROLE
+            constraintName: fk_role_and_user_role
+            onDelete: CASCADE
+            onUpdate: RESTRICT
+            referencedColumnNames: ID
+            referencedTableName: ROLE
+            validate: true
+  - changeSet:
+      id: insert-roles
+      author: pwrona
+      changes:
+        - insert:
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  value: BASE
+              - column:
+                  name: NAME
+                  value: BASE
+              - column:
+                  name: DESCRIPTION
+                  value: Base role added to every register user

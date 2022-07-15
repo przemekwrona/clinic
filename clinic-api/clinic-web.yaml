@@ -14,8 +14,65 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProfileResponse'
+  /login:
+    post:
+      operationId: login
+      summary: Login user with credentials
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AuthRequest'
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+  /register:
+    post:
+      operationId: register
+      summary: Register user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRegistrationRequest'
+      responses:
+        200:
+          description: 'Re'
 components:
   schemas:
+    AuthRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        password:
+          type: string
+    AuthResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        token:
+          type: string
+    UserRegistrationRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
     ProfileResponse:
       type: object
       properties:
