@@ -1,0 +1,156 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "id": 1,
+    "name": "Marcin",
+    "surname": "Rzeszutek",
+    "pwz": "3593247",
+    "projects": [
+      {
+        "id": 1,
+        "name": "phd-example-project",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus turpis urna, dignissim venenatis sem vitae, finibus mollis libero. Praesent elementum scelerisque quam sit amet tincidunt. Sed consectetur erat finibus neque vulputate ornare."
+      },
+      {
+        "id": 2,
+        "name": "phd-example-project-2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus turpis urna, dignissim venenatis sem vitae, finibus mollis libero. Praesent elementum scelerisque quam sit amet tincidunt. Sed consectetur erat finibus neque vulputate ornare."
+      }
+    ]
+  },
+  "patients": {
+    "patients": [
+      {
+        "id": "1",
+        "code": "WKD34",
+        "name": "Jan",
+        "surname": "Kowalski",
+        "surveys": [
+          {
+            "id": 8,
+            "name": "ADHD ICD 10",
+            "type": "ADHD_ICD_10",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 1,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 2,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "code": "AMT23",
+        "name": "Justyna",
+        "surname": "Krasnystaw",
+        "surveys": [
+          {
+            "id": 3,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 4,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 5,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "code": "MAN12",
+        "name": "Joanna",
+        "surname": "Kwiatkowska",
+        "surveys": []
+      },
+      {
+        "id": "4",
+        "code": "SOR78",
+        "name": "Michał",
+        "surname": "Nowacki",
+        "surveys": [
+          {
+            "id": 6,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          },
+          {
+            "id": 7,
+            "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
+            "date": "2022-05-02"
+          }
+        ]
+      }
+    ]
+  },
+  "reports": [
+    {
+      "id": 1,
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "gender": "MALE",
+      "ethnicity": "",
+      "isRaceBlack": false,
+      "isRaceAsian": false,
+      "isRaceWhite": true,
+      "isRaceOther": false,
+      "isRaceHawaiian": false,
+      "isRaceAmerican": false,
+      "livingPerson": "BOTH_BIOLOGICAL_PARENTS",
+      "informantPerson": "BOTH_BIOLOGICAL_PARENTS",
+      "primaryCaregiverFirstName": "Michał",
+      "primaryCaregiverLastName": "Kowalski",
+      "primaryCaregiverRelation": "BIOLOGICAL_FATHER",
+      "secondaryCaregiverFirstName": "Anita",
+      "secondaryCaregiverLastName": "Kowalska",
+      "secondaryCaregiverRelation": "BIOLOGICAL_MOTHER",
+      "didMotherHaveAnyIllnessInjuryDuringPregnancy": false,
+      "didMotherDrinkOrUseElicitDrugsDuringPregnancy": true,
+      "didMotherSmokeDuringPregnancy": false,
+      "wasTheBabyPremature": true,
+      "didTheBabyHaveAnyTroubleAtBirth": true,
+      "didTheBabyHaveAnyOtherTrouble": true
+    },
+    {
+      "id": 8,
+      "attentionDisorderInSchool": 2,
+      "attentionDisorderDuringPlay": 2,
+      "hearingDisorder": 1,
+      "losingThings": 1,
+      "forgetful": 1,
+      "firstName": "Jan",
+      "lastName": "Kowalski"
+    }
+  ]
+}

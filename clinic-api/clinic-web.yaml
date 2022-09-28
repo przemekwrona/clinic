@@ -3,6 +3,20 @@ info:
   title: Clinic API
   version: 0.1.9
 paths:
+  /users:
+    post:
+      operationId: updateUser
+      summary: Update user name and surname
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+      responses:
+        200:
+          description: 'User is created'
+
   /profiles:
     get:
       operationId: getUserInfo
@@ -42,10 +56,18 @@ paths:
             schema:
               $ref: '#/components/schemas/UserRegistrationRequest'
       responses:
-        200:
-          description: 'Re'
+        201:
+          description: 'Id of created user'
+
 components:
   schemas:
+    UserRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
     AuthRequest:
       type: object
       properties:

@@ -38,15 +38,23 @@
         "code": "WKD34",
         "name": "Jan",
         "surname": "Kowalski",
-        "ksadspl": [
+        "surveys": [
+          {
+            "id": 8,
+            "name": "ADHD ICD 10",
+            "type": "ADHD_ICD_10",
+            "date": "2022-05-02"
+          },
           {
             "id": 1,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           },
           {
             "id": 2,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           }
         ]
@@ -56,20 +64,23 @@
         "code": "AMT23",
         "name": "Justyna",
         "surname": "Krasnystaw",
-        "ksadspl": [
+        "surveys": [
           {
             "id": 3,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           },
           {
             "id": 4,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           },
           {
             "id": 5,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           }
         ]
@@ -79,22 +90,24 @@
         "code": "MAN12",
         "name": "Joanna",
         "surname": "Kwiatkowska",
-        "ksadspl": []
+        "surveys": []
       },
       {
         "id": "4",
         "code": "SOR78",
         "name": "Michał",
         "surname": "Nowacki",
-        "ksadspl": [
+        "surveys": [
           {
             "id": 6,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           },
           {
             "id": 7,
             "name": "K-SADS-PL",
+            "type": "K_SADS_PL",
             "date": "2022-05-02"
           }
         ]

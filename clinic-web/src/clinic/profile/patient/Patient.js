@@ -18,6 +18,17 @@ class Patient extends Component {
     }
 
     render() {
+        function getUrl(patient, survey) {
+            switch (survey.type) {
+                case 'K_SADS_PL':
+                    return "/patient/" + patient.code + "/k-sads-pl/" + survey.id;
+                case 'ADHD_ICD_10':
+                    return "/patient/" + patient.code + "/adhd-icd-10/" + survey.id;
+            }
+
+            return "/patient/" + patient.code + "/k-sads-pl/" + survey.id;
+        }
+
         return (
             <div className="container p-0">
                 <div className="row mt-3">
@@ -35,6 +46,10 @@ class Patient extends Component {
                                         return "flush-heading-" + patient.id;
                                     }
 
+                                    function getAccordionKey(patient) {
+                                        return "flush-heading-" + patient.id + "-key";
+                                    }
+
                                     function getCollapseId(patient) {
                                         return "flush-collapse-" + patient.id;
                                     }
@@ -43,14 +58,18 @@ class Patient extends Component {
                                         return "#flush-collapse-" + patient.id;
                                     }
 
-                                    return <div className="accordion-item">
+                                    function getSurveyKey(patient, survey) {
+                                        return "patient-" + patient.id + "-survey-" + survey.id + "-key";
+                                    }
+
+                                    return <div className="accordion-item" key={getAccordionKey(patient)}>
                                         <h2 className="accordion-header" id={getAccordionId(patient)}>
                                             <button className="accordion-button collapsed" type="button"
                                                     data-bs-toggle="collapse"
                                                     data-bs-target={getCollapseHashId(patient)} aria-expanded="false"
                                                     aria-controls={getCollapseId(patient)}>
                                                 <span className="fw-bold">{patient.code} &nbsp;</span>
-                                                <span className="badge bg-info">{patient.ksadspl.length}</span>
+                                                <span className="badge bg-info">{patient.surveys.length}</span>
 
                                                 <span> &nbsp; {patient.name} {patient.surname}</span>
                                             </button>
@@ -60,15 +79,18 @@ class Patient extends Component {
                                             <div className="accordion-body">
                                                 <div className="list-group">
                                                     {
-                                                        patient.ksadspl.length === 0 &&
-                                                        <div className="alert alert-info mb-0" role="alert">Patient <span className="fw-bold">{patient.code}</span> does not have K-SADS-PL surveys.</div>
+                                                        patient.surveys.length === 0 &&
+                                                        <div className="alert alert-info mb-0"
+                                                             role="alert">Patient <span
+                                                            className="fw-bold">{patient.code}</span> does not have
+                                                            K-SADS-PL surveys.</div>
                                                     }
 
                                                     {
-                                                        patient.ksadspl.map(function (ksads, i) {
-                                                            return <Link
-                                                                to={"/patient/" + patient.id + "/k-sads-pl/" + ksads.id}
-                                                                className="list-group-item list-group-item-action flex-column align-items-start">
+                                                        patient.surveys.map(function (ksads, i) {
+                                                            return <Link key={getSurveyKey(patient, ksads)}
+                                                                         to={getUrl(patient, ksads)}
+                                                                         className="list-group-item list-group-item-action flex-column align-items-start">
 
                                                                 <div className="d-flex w-100 justify-content-between">
                                                                     <h5 className="mb-1">{ksads.name}</h5>

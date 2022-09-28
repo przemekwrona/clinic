@@ -1,0 +1,21 @@
+<div class="container p-0">
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <h4>Research</h4>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="hasNoProjects()" class="alert alert-primary" role="alert">
+        This is a primary alert—check it out!
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <app-project-item *ngFor="let project of projects" [project]="project"></app-project-item>
+    </div>
+  </div>
+</div>

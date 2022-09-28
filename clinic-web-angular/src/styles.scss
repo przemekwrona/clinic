@@ -1,0 +1,24 @@
+$primary: #0e9096;
+$secondary: #D3D3D3;
+$success: #3e8d63;
+$info: #4cc5f5;
+$warning: #b8c924;
+$danger: #d62518;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.btn-primary {
+  color: whitesmoke !important;
+}
+
+form.default-report {
+  div.row {
+    margin-top: 1em;
+
+    div {
+      label.form-label {
+        font-weight: bold;
+      }
+    }
+  }
+}
