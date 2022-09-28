@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {Patient} from "./patient-creation/patient-creation.component";
 
 @Component({
   selector: 'app-patient',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientComponent implements OnInit {
 
-  constructor() { }
+  patients: Patient[] = [];
+
+  constructor(private activatedRoute: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe((data) => this.patients = data['patients'])
   }
 
 }

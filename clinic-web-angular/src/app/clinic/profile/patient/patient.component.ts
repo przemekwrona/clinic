@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Patients, SurveyType} from "../../../services/Profile";
+import {Patient, SurveyType} from "../../../services/Profile";
 
 @Component({
   selector: 'app-patient',
@@ -9,7 +9,7 @@ import {Patients, SurveyType} from "../../../services/Profile";
 })
 export class PatientComponent implements OnInit {
 
-  public patients: Patients = new Patients();
+  public patients: Patient[] = [];
 
   public links: Map<SurveyType, string> = new Map([
     [SurveyType.ADHD_ICD_10, 'adhd-icd-10'],

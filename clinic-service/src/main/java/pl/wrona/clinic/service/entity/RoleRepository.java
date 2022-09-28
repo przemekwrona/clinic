@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Repository
-public interface RoleRepository extends JpaRepository<Role, RoleType> {
+public interface RoleRepository extends JpaRepository<AppRole, RoleType> {
 
-    List<Role> findAllByIdIn(Collection<RoleType> id);
+    List<AppRole> findAllByIdIn(Collection<RoleType> id);
 }

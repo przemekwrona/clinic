@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @Entity
-public class Role {
+public class AppRole {
 
     @Id
     @Enumerated(EnumType.STRING)
@@ -18,5 +18,5 @@ public class Role {
     private String description;
 
     @ManyToMany(mappedBy = "roles")
-    private List<User> users;
+    private List<AppUser> users;
 }

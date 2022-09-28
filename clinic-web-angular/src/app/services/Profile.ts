@@ -12,10 +12,6 @@ export class Project {
   public description: string = '';
 }
 
-export class Patients {
-  public patients: Patient[] = [];
-}
-
 export class Patient {
   public id: string = '';
   public code: string = '';
