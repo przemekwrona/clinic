@@ -1,6 +1,6 @@
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {Patients, Profile} from "./Profile";
+import {Patient, Profile} from "./Profile";
 
 @Injectable()
 export class ProfileService {
@@ -13,7 +13,7 @@ export class ProfileService {
   }
 
   getPatients() {
-    return this.http.get<Patients>('/api/patients')
+    return this.http.get<Patient[]>('/api/patients')
   }
 
 }

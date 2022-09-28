@@ -3,6 +3,7 @@ package pl.wrona.clinic.service.registration;
 import lombok.AllArgsConstructor;
 import org.openapitools.api.RegisterApi;
 import org.openapitools.model.UserRegistrationRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ public class RegistrationController implements RegisterApi {
 
     @Override
     public ResponseEntity<Void> register(UserRegistrationRequest userRegistrationRequest) {
-        return registrationService.register(userRegistrationRequest);
+        registrationService.register(userRegistrationRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 }

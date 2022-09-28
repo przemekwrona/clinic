@@ -1,1 +1,28 @@
-<p>patient works!</p>
+<div class="container mt-4">
+
+  <div class="row">
+    <div class="col-md-8">
+      <h4 class="mt-2">Patients</h4>
+    </div>
+    <div class="col-md-2">
+      <button routerLink="/patients/create" type="button" class="btn btn-outline-success w-100">Create Patient</button>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-10">
+      <div class="card mb-3" *ngFor="let patient of patients">
+        <div class="card-body">
+          <h5 class="card-title">
+            <span class="fw-bold">{{patient.code}}</span>
+<!--            <span class="badge bg-info"> 3 </span>-->
+            <span> {{patient.name}} {{patient.name}}</span>
+          </h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a [routerLink]="['/patients', patient.code, 'reports']" class="btn btn-primary">Reports
+            <span class="badge bg-info"> 3</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

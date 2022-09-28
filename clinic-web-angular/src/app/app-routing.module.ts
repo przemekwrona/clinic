@@ -15,6 +15,8 @@ import {KSadsPLComponent} from "./clinic/patient/k-sads-pl/k-sads-pl.component";
 import {AdhdIcd10Component} from "./clinic/patient/adhd-icd10/adhd-icd10.component";
 import {KSadsPlResolver} from "./clinic/patient/k-sads-pl/k-sads-pl.resolver";
 import {AdhdIcd10Resolver} from "./clinic/patient/adhd-icd10/adhd-icd10.resolver";
+import {PatientCreationComponent} from "./clinic/patient/patient-creation/patient-creation.component";
+import {PatientReportsComponent} from "./clinic/patient/patient-reports/patient-reports.component";
 
 const routes: Routes = [{path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -56,8 +58,10 @@ const routes: Routes = [{path: 'login', component: LoginComponent},
           }
         ]
       },
-      {path: 'patient', component: PatientComponent},
-      {path: 'patient/:patientId', component: PatientDetailsComponent},
+      {path: 'patients', component: PatientComponent, resolve: {patients: PatientsResolver}},
+      {path: 'patients/create', component: PatientCreationComponent},
+      {path: 'patients/:patientId', component: PatientDetailsComponent},
+      {path: 'patients/:patientId/reports', component: PatientReportsComponent},
       {path: 'k-sads-pl/:reportId', component: KSadsPLComponent, resolve: {report: KSadsPlResolver}},
       {path: 'adhd-icd-10/:reportId', component: AdhdIcd10Component, resolve: {report: AdhdIcd10Resolver}}
     ]

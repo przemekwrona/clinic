@@ -4,96 +4,176 @@ databaseChangeLog:
       author: pwrona
       changes:
         - createTable:
-            tableName: USER
+            tableName: app_user
             columns:
               - column:
-                  name: ID
+                  name: id
                   type: int
               - column:
-                  name: NAME
+                  name: name
                   type: varchar(50)
               - column:
-                  name: SURNAME
+                  name: surname
                   type: varchar(50)
               - column:
-                  name: USERNAME
+                  name: username
                   type: varchar(50)
               - column:
-                  name: EMAIL
+                  name: email
                   type: varchar(50)
               - column:
-                  name: PASSWORD
+                  name: password
                   type: varchar(50)
+        - addNotNullConstraint:
+            columnName: id
+            tableName: app_user
+            validate: true
+        - addAutoIncrement:
+            columnDataType: int
+            columnName: id
+            incrementBy: 1
+            startWith: 1
+            tableName: app_user
         - addPrimaryKey:
-            tableName: USER
-            columnNames: ID
-            clustered: true
+            tableName: app_user
+            columnNames: id
             constraintName: pk_user
   - changeSet:
       id: create-table-role
       author: pwrona
       changes:
         - createTable:
-            tableName: ROLE
+            tableName: app_role
             columns:
               - column:
-                  name: ID
+                  name: id
                   type: varchar(5)
               - column:
-                  name: NAME
+                  name: name
                   type: varchar(20)
               - column:
-                  name: DESCRIPTION
+                  name: description
                   type: varchar(250)
+        - addNotNullConstraint:
+            columnName: id
+            tableName: app_role
+            validate: true
         - addPrimaryKey:
-            tableName: ROLE
-            columnNames: ID
-            clustered: true
+            tableName: app_role
+            columnNames: id
             constraintName: pk_role
   - changeSet:
       id: create-table-user-role
       author: pwrona
       changes:
         - createTable:
-            tableName: USER_ROLE
+            tableName: user_role
             columns:
               - column:
-                  name: USER_ID
+                  name: user_id
                   type: int
               - column:
-                  name: ROLE_ID
+                  name: role_id
                   type: varchar(5)
+        - addNotNullConstraint:
+            columnName: user_id
+            tableName: user_role
+            validate: true
+        - addNotNullConstraint:
+            columnName: role_id
+            tableName: user_role
+            validate: true
         - addForeignKeyConstraint:
-            baseColumnNames: USER_ID
-            baseTableName: USER_ROLE
+            baseColumnNames: user_id
+            baseTableName: user_role
             constraintName: fk_user_and_user_role
             onDelete: CASCADE
             onUpdate: RESTRICT
-            referencedColumnNames: ID
-            referencedTableName: USER
+            referencedColumnNames: id
+            referencedTableName: app_user
             validate: true
         - addForeignKeyConstraint:
-            baseColumnNames: ROLE_ID
-            baseTableName: USER_ROLE
+            baseColumnNames: role_id
+            baseTableName: user_role
             constraintName: fk_role_and_user_role
             onDelete: CASCADE
             onUpdate: RESTRICT
-            referencedColumnNames: ID
-            referencedTableName: ROLE
+            referencedColumnNames: id
+            referencedTableName: app_role
             validate: true
   - changeSet:
       id: insert-roles
       author: pwrona
       changes:
         - insert:
-            tableName: ROLE
+            tableName: app_role
             columns:
               - column:
-                  name: ID
-                  value: BASE
+                  name: id
+                  value: USER
               - column:
-                  name: NAME
-                  value: BASE
+                  name: name
+                  value: USER
               - column:
-                  name: DESCRIPTION
+                  name: description
                   value: Base role added to every register user
+        - insert:
+            tableName: app_role
+            columns:
+              - column:
+                  name: id
+                  value: ADMIN
+              - column:
+                  name: name
+                  value: ADMIN
+              - column:
+                  name: description
+                  value: Role Admin
+  - changeSet:
+      id: create-table-patient
+      author: pwrona
+      changes:
+        - createTable:
+            tableName: patient
+            columns:
+              - column:
+                  name: id
+                  type: int
+              - column:
+                  name: name
+                  type: varchar(60)
+              - column:
+                  name: surname
+                  type: varchar(60)
+              - column:
+                  name: code
+                  type: varchar(8)
+        - addPrimaryKey:
+            tableName: patient
+            columnNames: id
+            constraintName: pk_patient
+        - addAutoIncrement:
+            columnDataType: int
+            columnName: id
+            incrementBy: 1
+            startWith: 1
+            tableName: patient
+  - changeSet:
+      id: create-table-report
+      author: pwrona
+      changes:
+        - createTable:
+            tableName: report
+            columns:
+              - column:
+                  name: patient_id
+                  type: int
+              - column:
+                  name: create_date
+                  type: datetime
+              - column:
+                  name: report_type
+                  type: varchar(30)
+              - column:
+                  name: report
+                  type: clob

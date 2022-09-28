@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.openapitools.model.AuthRequest;
 import org.openapitools.model.AuthResponse;
 import org.springframework.stereotype.Service;
-import pl.wrona.clinic.service.entity.User;
+import pl.wrona.clinic.service.entity.AppUser;
 import pl.wrona.clinic.service.entity.UserRepository;
 
 @Service
@@ -15,7 +15,7 @@ public class AuthService {
 
     public AuthResponse login(AuthRequest authRequest) {
 
-        User user = userRepository.findByUsernameOrEmail(authRequest.getName(), authRequest.getName());
+        AppUser user = userRepository.findByUsernameOrEmail(authRequest.getName(), authRequest.getName());
 
         return new AuthResponse()
                 .name(user.getName())

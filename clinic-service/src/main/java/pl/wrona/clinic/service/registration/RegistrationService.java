@@ -1,12 +1,12 @@
 package pl.wrona.clinic.service.registration;
 
 import lombok.AllArgsConstructor;
-import org.openapitools.api.RegisterApi;
 import org.openapitools.model.UserRegistrationRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import pl.wrona.clinic.service.entity.Role;
-import pl.wrona.clinic.service.entity.User;
+import pl.wrona.clinic.service.entity.AppRole;
+import pl.wrona.clinic.service.entity.AppUser;
 import pl.wrona.clinic.service.entity.UserRepository;
 import pl.wrona.clinic.service.role.RoleService;
 
@@ -23,15 +23,12 @@ public class RegistrationService {
     private final UserRegistrationFactory userRegistrationFactory;
 
     @Transactional
-    public ResponseEntity<Void> register(UserRegistrationRequest userRegistrationRequest) {
+    public void register(UserRegistrationRequest userRegistrationRequest) {
 
-        User user = userRegistrationFactory.apply(userRegistrationRequest);
-        List<Role> defaultRoles = roleService.findDefaultListOfRoles();
+        AppUser user = userRegistrationFactory.apply(userRegistrationRequest);
+        user.setRoles(roleService.findDefaultListOfRoles());
+        user.setPassword(userRegistrationRequest.getPassword());
 
-        user.setRoles(defaultRoles);
-
-        userRepository.save(userRegistrationFactory.apply(userRegistrationRequest));
-
-        return null;
+        userRepository.save(user);
     }
 }

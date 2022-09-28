@@ -58,6 +58,46 @@ paths:
       responses:
         201:
           description: 'Id of created user'
+  /report:
+    post:
+      operationId: createReport
+      summary: Create new report
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateReportRequest'
+      responses:
+        201:
+          description: 'Id of created user'
+  /patients:
+    post:
+      operationId: createPatients
+      summary: Create patient
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePatientRequest'
+      responses:
+        201:
+          description: 'Id of created user'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePatientResponse'
+    get:
+      operationId: getPatients
+      summary: Get patients
+      responses:
+        200:
+          description: 'Id of created user'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Patients'
 
 components:
   schemas:
@@ -104,3 +144,40 @@ components:
           type: string
         pwz:
           type: string
+    CreateReportRequest:
+      type: object
+      properties:
+        patientId:
+          type: string
+        report:
+          type: string
+    CreatePatientRequest:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        surname:
+          type: string
+        code:
+          type: string
+        surveys:
+          type: array
+          items:
+            $ref: '#/components/schemas/Survey'
+    CreatePatientResponse:
+      type: object
+      properties:
+        patientId:
+          type: number
+    Patients:
+      type: array
+      items:
+        $ref: '#/components/schemas/CreatePatientRequest'
+    Survey:
+      type: object
+      properties:
+        id:
+          type: number
+
