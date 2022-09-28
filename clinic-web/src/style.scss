@@ -8,11 +8,15 @@
 //);
 
 $primary: #0e9096;
-$secondary: #8f5325;
+$secondary: #D3D3D3;
 $success: #3e8d63;
 $info: #4cc5f5;
 $warning: #b8c924;
 $danger: #d62518;
+
+.btn-primary {
+  color: whitesmoke !important;
+}
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';

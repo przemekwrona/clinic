@@ -11,7 +11,11 @@ function Profile() {
     const [tab, setTab] = useState('OVERVIEW')
 
     async function getProfile() {
-        return axios.get(`http://localhost:4000/profile`);
+        return axios.get(`/profiles`);
+    }
+
+    async function updateProfile() {
+        return axios.post(`/users`, {name: profile.name, surname: profile.surname});
     }
 
     useEffect(() => {
@@ -19,15 +23,20 @@ function Profile() {
     }, [])
 
     function edit() {
-        setEditable(true)
+        setEditable(true);
     }
 
     function cancel() {
-        setEditable(false)
+        setEditable(false);
     }
 
-    function save() {
-        setEditable(false)
+    function save(e) {
+        e.preventDefault();
+        console.log(e);
+        console.log(profile);
+        updateProfile()
+            .then(res => setEditable(false))
+            .catch(err => setEditable(false));
     }
 
     function checkTab(checkedTab) {
@@ -62,19 +71,20 @@ function Profile() {
                             <label className="form-label">{profile.name}</label>}
 
                         {editable && <input type="text" className="form-control mb-3" id="name"
-                                            value={profile.name}/>}
+                                            defaultValue={profile.name}/>}
                     </div>
                     <div>
                         <label htmlFor="surname" className="form-label">Nazwisko:&nbsp;</label>
                         {!editable && <label className="form-label">{profile.surname}</label>}
                         {editable &&
-                            <input type="text" className="form-control mb-3" id="surname" value={profile.surname}/>}
+                            <input type="text" className="form-control mb-3" id="surname"
+                                   defaultValue={profile.surname}/>}
                     </div>
                     <div>
                         <label htmlFor="pwz-number" className="form-label">Numer PWZ:&nbsp;</label>
                         {!editable && <label className="form-label">{profile.pwz}</label>}
                         {editable &&
-                            <input type="text" className="form-control mb-3" id="pwz-number" value={profile.pwz}
+                            <input type="text" className="form-control mb-3" id="pwz-number" defaultValue={profile.pwz}
                                    disabled={true}/>}
                     </div>
                     <div className="float-end">
@@ -87,23 +97,17 @@ function Profile() {
             </div>
             <div className="col-md-9">
                 <ul className="nav nav-tabs">
-                    <li className="nav-item">
-                        <a className={checkTab('OVERVIEW') ? 'nav-link active' : 'nav-link'}
-                           onClick={setOverview}>
-                            <Link to="/profile/overview">Overview</Link>
-                        </a>
+                    <li key="overview-link" className="nav-item">
+                        <Link to="/profile/overview" className={checkTab('OVERVIEW') ? 'nav-link active' : 'nav-link'}
+                              onClick={setOverview}> Overview </Link>
                     </li>
-                    <li className="nav-item">
-                        <a className={checkTab('PATIENTS') ? 'nav-link active' : 'nav-link'}
-                           onClick={setPatients}>
-                            <Link to="/profile/patient">Patients</Link>
-                        </a>
+                    <li key="patient-link" className="nav-item">
+                        <Link to="/profile/patient" className={checkTab('PATIENTS') ? 'nav-link active' : 'nav-link'}
+                              onClick={setPatients}> Patients </Link>
                     </li>
-                    <li className="nav-item">
-                        <a className={checkTab('RESEARCH') ? 'nav-link active' : 'nav-link'}
-                           onClick={setResearch}>
-                            <Link to="/profile/research">Research</Link>
-                        </a>
+                    <li key="profile-link" className="nav-item">
+                        <Link to="/profile/research" className={checkTab('RESEARCH') ? 'nav-link active' : 'nav-link'}
+                              onClick={setResearch}> Research </Link>
                     </li>
                 </ul>
 

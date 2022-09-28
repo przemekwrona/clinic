@@ -1,12 +1,11 @@
 import React, {Component} from "react";
 import Profile from "./profile/Profile";
 import Patient from "./patient/Patient";
-import {BrowserRouter as Router, Link, Routes, Route, Outlet} from "react-router-dom";
+import {Link, Routes, Route} from "react-router-dom";
 
 class Clinic extends Component {
     render() {
         return (
-
             <div>
                 <header className="p-3 mb-3 border-bottom bg-primary">
                     <div className="container">
@@ -62,6 +61,9 @@ class Clinic extends Component {
                                     <li>
                                         <hr className="dropdown-divider"/>
                                     </li>
+                                    <li>
+                                        <Link to="/login" className="dropdown-item">Login</Link>
+                                    </li>
                                     <li><a className="dropdown-item" href="#">Sign out</a></li>
                                 </ul>
                             </div>
@@ -74,6 +76,7 @@ class Clinic extends Component {
                         <Route path="/profile" element={<Profile/>}></Route>
                         <Route path="/patient" element={<Patient/>}></Route>
                         <Route path="/patient/:patientId/k-sads-pl/:ksadsplId" element={<Patient/>}></Route>
+                        <Route path="/patient/:patientId/adhd-icd-10/:surveyId" element={<Patient/>}></Route>
                         <Route path="/*" element={<Profile/>}></Route>
                     </Routes>
                 </div>

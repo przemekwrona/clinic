@@ -1,0 +1,978 @@
+<form class="default-report">
+  <div class="row">
+    <h5 class="mt-3">SUBJECT INFORMATION</h5>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="firstName" class="form-label">First Name:</label>
+      <input type="text" class="form-control" name="firstName" id="firstName" [(ngModel)]="kSadsPl.firstName"/>
+    </div>
+
+    <div class="col-md-6">
+      <label for="lastName" class="form-label">Last Name:</label>
+      <input type="text" class="form-control" name="lastName" id="lastName" [(ngModel)]="kSadsPl.lastName"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label class="form-label">Gender:</label>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="genderName" id="genderMale"
+               value="MALE" [(ngModel)]="kSadsPl.gender">
+        <label class="form-check-label" for="genderMale">Male</label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="genderName" id="genderFemale"
+               value="FEMALE" [(ngModel)]="kSadsPl.gender">
+        <label class="form-check-label" for="genderFemale">Female</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label class="form-label">Ethnicity:</label>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="ethnicityName" id="ethnicityLatino"
+               value="LATINO" [(ngModel)]="kSadsPl.ethnicity"/>
+        <label class="form-check-label" for="ethnicityLatino">Hispanic or Latino</label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="ethnicityName" id="ethnicityNonLatino"
+               value="NON_LATINO" [(ngModel)]="kSadsPl.ethnicity"/>
+        <label class="form-check-label" for="ethnicityNonLatino">Not Hispanic or Latino</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label class="form-label">Race (Mark all that apply):</label>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="race" id="black"
+               value="BLACK" [(ngModel)]="kSadsPl.isRaceBlack"/>
+        <label class="form-check-label" for="black">Black or African American</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="race" id="asian"
+               value="ASIAN" [(ngModel)]="kSadsPl.isRaceAsian"/>
+        <label class="form-check-label" for="asian">Asian</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="race" id="white"
+               value="WHITE" [(ngModel)]="kSadsPl.isRaceWhite"/>
+        <label class="form-check-label" for="white">White or Caucasian</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="race" id="raceOther"
+               value="OTHER" [(ngModel)]="kSadsPl.isRaceOther"/>
+        <label class="form-check-label" for="raceOther">Other</label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="race" id="hawaiian"
+               value="HAWAIIAN" [(ngModel)]="kSadsPl.isRaceHawaiian"/>
+        <label class="form-check-label" for="hawaiian">Native Hawaiian or Pacific
+          Islander</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="race" id="american"
+               value="AMERICAN" [(ngModel)]="kSadsPl.isRaceAmerican"/>
+        <label class="form-check-label" for="american">Native American or Alaskan
+          Native</label>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <div class="col-md-12">
+      <label class="form-label">With whom is subject currently living (choose one)?</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person" id="subject-living-with-biological-parents"
+               value="BOTH_BIOLOGICAL_PARENTS" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-parents">
+          Both biological parents
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-parents-joint-custody"
+               value="BOTH_BIOLOGICAL_PARENTS_BUT_JOINT_CUSTODY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-parents-joint-custody">
+          Both biological parents, but joint custody
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-mother-stepfather"
+               value="BIOLOGICAL_MOTHER_AND_STEPFATHER" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-mother-stepfather">
+          Biological mother and stepfather
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-father-stepmother"
+               value="BIOLOGICAL_FATHER_AND_STEPMOTHER" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-father-stepmother">
+          Biological father and stepmother
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-mother-partner"
+               value="BIOLOGICAL_MOTHER_AND_BOYFRIEND_OR_GIRLFRIEND" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-mother-partner">
+          Biological mother and boyfriend/girlfriend
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-father-partner"
+               value="BIOLOGICAL_FATHER_AND_BOYFRIEND_OR_GIRLFRIEND" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-father-partner">
+          Biological father and boyfriend/girlfriend
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-mother-only"
+               value="BIOLOGICAL_MOTHER_ONLY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-mother-only">
+          Biological mother only
+        </label>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-biological-father-only"
+               value="BIOLOGICAL_FATHER_ONLY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-biological-father-only">
+          Biological father only
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-stepmother-only"
+               value="STEPMOTHER_ONLY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-stepmother-only">
+          Stepmother only
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-stepfather-only"
+               value="STEPFATHER_ONLY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-stepfather-only">
+          Stepfather only
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-grandparent"
+               value="GRANDPARENT" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-grandparent">
+          Grandparent
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-adoptive-parent"
+               value="ADOPTIVE_PARENT" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-adoptive-parent">
+          Adoptive parent
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-other-friend"
+               value="OTHER_FRIEND" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-other-friend">
+          Other relative/friend
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-foster-home"
+               value="FOSTER_HOME" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-foster-home">
+          Foster home
+        </label>
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-group-home"
+               value="GROUP_HOME" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-group-home">Group home</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-residential-institution"
+               value="RESIDENTIAL_HOME" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-residential-institution">
+          Residential institution
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-boarding-home"
+               value="BOARDING_HOME" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-boarding-home">
+          Boarding home
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-runaway"
+               value="RUNWAY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-runaway">
+          Runaway
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-college-student"
+               value="COLLEGE_STUDENT" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-college-student">
+          College student
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-lives-independently"
+               value="LIVES_INDEPENDENTLY" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-lives-independently">
+          Lives independently
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="living-person"
+               id="subject-living-with-other"
+               value="OTHER" [(ngModel)]="kSadsPl.livingPerson"/>
+        <label class="form-check-label" for="subject-living-with-other">
+          Other
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <h5 class="mt-3">PARENTAL PARTICIPATION:</h5>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <label class="form-label">
+        Who is the informant/reporter for this interview?
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-biological-parents"
+               value="BOTH_BIOLOGICAL_PARENTS" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-biological-parents">
+          Both biological parents
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-biological-mother"
+               value="BIOLOGICAL_MOTHER" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-biological-mother">
+          Biological mother
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-biological-father"
+               value="BOTH_BIOLOGICAL_FATHER" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-biological-father">
+          Biological father
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-both-adoptive-parents"
+               value="BOTH_ADOPTIVE_PARENTS" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-both-adoptive-parents">
+          Both adoptive parents
+        </label>
+      </div>
+
+
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-adoptive-mother"
+               value="ADOPTIVE_MOTHER" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-adoptive-mother">
+          Adoptive mother
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-adoptive-father"
+               value="ADOPTIVE_FATHER" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-adoptive-father">
+          Adoptive father
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-step-mother"
+               value="STEPMOTHER" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-step-mother">
+          Step-mother
+        </label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-step-father"
+               value="STEPFATHER" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-step-father">
+          Step-father
+        </label>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="informant-person"
+               id="informant-person-grandparent"
+               value="GRANDPARENTNT" [(ngModel)]="kSadsPl.informantPerson"/>
+        <label class="form-check-label" for="informant-person-grandparent">
+          Grandparent
+        </label>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="informant-person"
+                 id="informant-person-other-relative"
+                 value="OTHER_RELATIVE" [(ngModel)]="kSadsPl.informantPerson"/>
+          <label class="form-check-label" for="informant-person-other-relative">
+            Other relative
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="informant-person"
+                 id="informant-person-other"
+                 value="OTHER" [(ngModel)]="kSadsPl.informantPerson"/>
+          <label class="form-check-label" for="informant-person-other">
+            Other
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <h5 class="mt-3">SUBJECT'S PRIMARY CAREGIVER's</h5>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <label for="primary-caregiver-first-name" class="form-label">
+        First Name:
+        <small class="text-muted">(lives with subject, if applicable)</small>
+      </label>
+      <input type="text" class="form-control" id="primary-caregiver-first-name" name="primary-caregiver-first-name"
+             [(ngModel)]="kSadsPl.primaryCaregiverFirstName"/>
+    </div>
+    <div class="col-md-6">
+      <label for="primary-caregiver-last-name" class="form-label">Last Name:</label>
+      <input type="text" class="form-control" id="primary-caregiver-last-name" name="primary-caregiver-last-name"
+             [(ngModel)]="kSadsPl.primaryCaregiverLastName"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <label class="form-label">
+        This is subject's:
+      </label>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-biological-mother"
+               value="BIOLOGICAL_MOTHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="primary-caregiver-relation-biological-mother">
+          Biological Mother
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-step-mother"
+               value="STEPMOTHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-step-mother">
+          Stepmother
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-adopted-mother"
+               value="ADOPTED_MOTHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-adopted-mother">
+          Adopted Mother
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-biological-father"
+               value="BIOLOGICAL_FATHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="primary-caregiver-relation-biological-father">
+          Biological Father
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-step-father"
+               value="STEPFATHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-step-father">
+          Stepfather
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-adopted-father"
+               value="ADOPTED_FATHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-adopted-father">
+          Adopted Father
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-foster-mother"
+               value="FOSTER_MOTHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="primary-caregiver-relation-foster-mother">
+          Foster Mother
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-aunt"
+               value="AUNT" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-aunt">
+          Aunt
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-grandmother"
+               value="GRANDMOTHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-grandmother">
+          Grandmother
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-foster-father"
+               value="FOSTER_FATHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="primary-caregiver-relation-foster-father">
+          Foster Father
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-uncle"
+               value="UNCLE" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-uncle">
+          Uncle
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-grandfather"
+               value="GRANDFATHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-grandfather">
+          Grandfather
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-none"
+               value="NONE" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="primary-caregiver-relation-none">
+          None
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="primary-caregiver-relation"
+               id="primary-caregiver-relation-other"
+               value="OTHER" [(ngModel)]="kSadsPl.primaryCaregiverRelation"/>
+        <label class="form-check-label" for="primary-caregiver-relation-other">
+          Other
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <h5 class="mt-3">SUBJECT'S SECONDARY CAREGIVER's</h5>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <label for="secondary-caregiver-first-name" class="form-label">
+        First Name:
+        <small class="text-muted">(lives with subject, if applicable)</small>
+      </label>
+      <input type="text" class="form-control" id="secondary-caregiver-first-name"
+             name="secondary-caregiver-first-name" [(ngModel)]="kSadsPl.secondaryCaregiverFirstName"/>
+    </div>
+    <div class="col-md-6">
+      <label for="secondary-caregiver-last-name" class="form-label">Last Name:</label>
+      <input type="text" class="form-control" id="secondary-caregiver-last-name" name="secondary-caregiver-last-name"
+             [(ngModel)]="kSadsPl.secondaryCaregiverLastName"/>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2">
+      <label class="form-label">
+        This is subject's:
+      </label>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-biological-mother"
+               value="BIOLOGICAL_MOTHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-biological-mother">
+          Biological Mother
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-step-mother"
+               value="STEPMOTHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-step-mother">
+          Stepmother
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-adopted-mother"
+               value="ADOPTED_MOTHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-adopted-mother">
+          Adopted Mother
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-biological-father"
+               value="BIOLOGICAL_FATHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-biological-father">
+          Biological Father
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-step-father"
+               value="STEPFATHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-step-father">
+          Stepfather
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-adopted-father"
+               value="ADOPTED_FATHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-adopted-father">
+          Adopted Father
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-foster-mother"
+               value="FOSTER_MOTHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-foster-mother">
+          Foster Mother
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-aunt"
+               value="AUNT" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-aunt">
+          Aunt
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-grandmother"
+               value="GRANDMOTHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-grandmother">
+          Grandmother
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-foster-father"
+               value="FOSTER_FATHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-foster-father">
+          Foster Father
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-uncle"
+               value="UNCLE" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-uncle">
+          Uncle
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-grandfather"
+               value="GRANDFATHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-grandfather">
+          Grandfather
+        </label>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-none"
+               value="NONE" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label"
+               for="secondary-caregiver-relation-none">
+          None
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="secondary-caregiver-relation"
+               id="secondary-caregiver-relation-other"
+               value="OTHER" [(ngModel)]="kSadsPl.secondaryCaregiverRelation"/>
+        <label class="form-check-label" for="secondary-caregiver-relation-other">
+          Other
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div class="row">
+    <h5 class="mt-3">CHILD AND ADOLESCENT HEALTH SCREEN</h5>
+  </div>
+
+  <div class="row">
+    <h5 class="mt-3">PREGNANCY AND BIRTH:</h5>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">1. Mother's age at birth of child
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">2. Did mother have any illness injury during pregnancy?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="illness-during-pregnancy"
+               id="illness-during-pregnancy-yes" [value]="true"
+               [(ngModel)]="kSadsPl.didMotherHaveAnyIllnessInjuryDuringPregnancy"/>
+        <label class="form-check-label"
+               for="illness-during-pregnancy-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="illness-during-pregnancy"
+               id="illness-during-pregnancy-no" [value]="false"
+               [(ngModel)]="kSadsPl.didMotherHaveAnyIllnessInjuryDuringPregnancy"/>
+        <label class="form-check-label" for="illness-during-pregnancy-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">3. Did she take any medications other than vitamins iron?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="medications-during-pregnancy"
+               id="medications-during-pregnancy-yes" [value]="true"
+               [(ngModel)]="kSadsPl.didMotherTakeAnyMedicationsOtherThanVitaminsIron"/>
+        <label class="form-check-label"
+               for="medications-during-pregnancy-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="medications-during-pregnancy"
+               id="medications-during-pregnancy-no" [value]="false"
+               [(ngModel)]="kSadsPl.didMotherTakeAnyMedicationsOtherThanVitaminsIron"/>
+        <label class="form-check-label" for="medications-during-pregnancy-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">4. Did mother drink or use elicit drugs during pregnancy?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="drink-or-drugs-during-pregnancy"
+               id="drink-or-drugs-during-pregnancy-yes" [value]="true"
+               [(ngModel)]="kSadsPl.didMotherDrinkOrUseElicitDrugsDuringPregnancy"/>
+        <label class="form-check-label" for="drink-or-drugs-during-pregnancy-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="drink-or-drugs-during-pregnancy"
+               id="drink-or-drugs-during-pregnancy-no" [value]="false"
+               [(ngModel)]="kSadsPl.didMotherDrinkOrUseElicitDrugsDuringPregnancy"/>
+        <label class="form-check-label" for="drink-or-drugs-during-pregnancy-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">5. Did mother smoke during pregnancy?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="smoke-during-pregnancy"
+               id="smoke-during-pregnancy-yes" [value]="true" [(ngModel)]="kSadsPl.didMotherSmokeDuringPregnancy"/>
+        <label class="form-check-label"
+               for="smoke-during-pregnancy-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="smoke-during-pregnancy"
+               id="smoke-during-pregnancy-no" [value]="false" [(ngModel)]="kSadsPl.didMotherSmokeDuringPregnancy"/>
+        <label class="form-check-label" for="smoke-during-pregnancy-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">6. Was the baby premature?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="was-premature"
+               id="premature-yes" [value]="true" [(ngModel)]="kSadsPl.wasTheBabyPremature"/>
+        <label class="form-check-label"
+               for="premature-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="was-premature"
+               id="premature-no" [value]="false" [(ngModel)]="kSadsPl.wasTheBabyPremature"/>
+        <label class="form-check-label" for="premature-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">7. What was the birth weight?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">8. Did the baby have any trouble at birth?
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="trouble-at-birth"
+               id="trouble-at-birth-yes" [value]="true" [(ngModel)]="kSadsPl.didTheBabyHaveAnyTroubleAtBirth"/>
+        <label class="form-check-label"
+               for="trouble-at-birth-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="trouble-at-birth"
+               id="trouble-at-birth-no" [value]="false" [(ngModel)]="kSadsPl.didTheBabyHaveAnyTroubleAtBirth"/>
+        <label class="form-check-label" for="trouble-at-birth-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">9. Did the baby have any other trouble? (Jaundice, infections, other?)
+      <hr class="mb-0"/>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="other-trouble-at-birth"
+               id="other-trouble-at-birth-yes" [value]="true" [(ngModel)]="kSadsPl.didTheBabyHaveAnyOtherTrouble"/>
+        <label class="form-check-label"
+               for="other-trouble-at-birth-yes">
+          Yes
+        </label>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="other-trouble-at-birth"
+               id="other-trouble-at-birth-no" [value]="false" [(ngModel)]="kSadsPl.didTheBabyHaveAnyOtherTrouble"/>
+        <label class="form-check-label" for="other-trouble-at-birth-no">
+          No
+        </label>
+      </div>
+    </div>
+
+    <div class="col-md-4"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">10. How many days did the baby stay in the hospital after birth?
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+
+  <hr/>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+

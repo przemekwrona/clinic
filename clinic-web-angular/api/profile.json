@@ -1,0 +1,17 @@
+  "id": 1,
+  "name": "Marcin",
+  "surname": "Rzeszutek",
+  "pwz": "3593247",
+  "projects": [
+    {
+      "id": 1,
+      "name": "phd-example-project",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus turpis urna, dignissim venenatis sem vitae, finibus mollis libero. Praesent elementum scelerisque quam sit amet tincidunt. Sed consectetur erat finibus neque vulputate ornare."
+    },
+    {
+      "id": 2,
+      "name": "phd-example-project-2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus turpis urna, dignissim venenatis sem vitae, finibus mollis libero. Praesent elementum scelerisque quam sit amet tincidunt. Sed consectetur erat finibus neque vulputate ornare."
+    }
+  ]
+}

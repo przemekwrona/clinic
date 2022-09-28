@@ -1,0 +1,11 @@
+{
+  "yes": "tak",
+  "adhdIcd10": {
+    "attentionDisorderInSchool": "Dziecko nie jest w stan utrzymać ciągłej i bliżej uwagi na szczegółach lub popełnia błędy z nieuwagi w szkole, pracy lub innej działalności.",
+    "attentionDisorderDuringPlay": "Dziecku często nie udaje się utrzymać trwałej uwagi na zadaniach lub grach/zabawach.",
+    "hearingDisorder": "Często wydaje się, że dziecko nie słyszy tego, co się do niego mówi.",
+    "losingThings": "Dziecko często gubi rzeczy niezbędne do pracy lub innych zajęć, np. zabawki, przybory szkolne, ołówk, książki, narzędzia.",
+    "externalStimuli": "Dziecko łatwo rozprasza się pod wpływem zewnętrznych bodźców.",
+    "forgetful": "Dziecko często jest zaominalskie podczas codziennych zajęć."
+  }
+}
