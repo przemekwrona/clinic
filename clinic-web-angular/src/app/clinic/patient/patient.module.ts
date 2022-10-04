@@ -9,6 +9,7 @@ import {SharedModule} from "../../shared/shared.module";
 import {PatientService} from "../../services/PatientService";
 import {PatientsResolver} from "../profile/patient/patient.resolver";
 import { PatientReportsComponent } from './patient-reports/patient-reports.component';
+import {PatientReportsResolver} from "./patient-reports/patient-reports.resolver";
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PatientReportsComponent } from './patient-reports/patient-reports.compo
   ],
   providers: [
     PatientService,
-    PatientsResolver
+    PatientsResolver,
+    PatientReportsResolver
   ]
 })
 export class PatientModule {

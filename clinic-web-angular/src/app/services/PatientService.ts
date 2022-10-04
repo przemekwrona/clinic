@@ -17,4 +17,12 @@ export class PatientService {
     return this.http.get<PatientResponse[]>(`/api/patients`);
   }
 
+  getReports(code: string): Observable<Patient> {
+    return this.http.get<Patient>(`/api/patients/${code}/reports`);
+  }
+
+  postReports(code: string, reportType: string, report: string): Observable<any> {
+    return this.http.post(`/api/patients/${code}/reports`, {reportType: reportType, report: report});
+  }
+
 }

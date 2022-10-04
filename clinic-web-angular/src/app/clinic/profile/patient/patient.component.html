@@ -17,7 +17,7 @@
                     aria-controls="collapse">
               <span class="fw-bold">{{patient.code}} &nbsp;</span>
               <span class="badge bg-info">{{patient.surveys.length}}</span>
-              <span> &nbsp; {{patient.name}} {{patient.name}}</span>
+              <span> &nbsp; {{patient.name}} {{patient.surname}}</span>
             </button>
           </h2>
           <div id="collapse-{{i}}" class="accordion-collapse collapse"
@@ -27,18 +27,18 @@
               <div class="list-group">
                 <div *ngIf="patient.surveys.length == 0" class="alert alert-info mb-0" role="alert">Patient <span
                   class="fw-bold">{{patient.code}}</span>
-                  does not have K-SADS-PL surveys.
+                  does not have surveys.
                 </div>
                 <ng-container *ngIf="patient.surveys.length != 0">
-                  <a *ngFor="let survey of patient.surveys" [routerLink]="['/', links.get(survey.type), survey.id]"
+                  <a *ngFor="let survey of patient.surveys" [routerLink]="['/', links.get(survey.surveyType), survey.id]"
                      class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
-                      <h5 class="mb-1">{{survey.name}}</h5>
-                      <small>{{survey.date}}</small>
+                      <h5 class="mb-1">{{survey.surveyType}}</h5>
+                      <small>{{survey.createDate | date}}</small>
                     </div>
-                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                      varius blandit.</p>
-                    <small>Donec id elit non mi porta.</small>
+<!--                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus-->
+<!--                      varius blandit.</p>-->
+<!--                    <small>Donec id elit non mi porta.</small>-->
                   </a>
                 </ng-container>
               </div>

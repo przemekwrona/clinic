@@ -16,6 +16,7 @@ export class Patient {
   public id: string = '';
   public code: string = '';
   public name: string = '';
+  public surname: string = '';
   public description: string = '';
   public surveys: Survey[] = [];
 }
@@ -23,8 +24,8 @@ export class Patient {
 export class Survey {
   public id: string = '';
   public name: string = '';
-  public type: SurveyType = SurveyType.GENERAL;
-  public date: string = '';
+  public surveyType: SurveyType = SurveyType.GENERAL;
+  public createDate: string = '';
 }
 
 export enum SurveyType {

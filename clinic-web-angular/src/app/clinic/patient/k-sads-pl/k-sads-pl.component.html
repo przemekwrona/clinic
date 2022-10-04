@@ -1,6 +1,6 @@
-<form class="default-report">
+<form class="default-survey">
   <div class="row">
-    <h5 class="mt-3">SUBJECT INFORMATION</h5>
+    <h5 class="mt-3">SUBJECT INFORMATION {{patientCode}}</h5>
   </div>
   <div class="row">
     <div class="col-md-6">
@@ -973,6 +973,6 @@
 
   <hr/>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary" (click)="save()">Submit</button>
 </form>
 

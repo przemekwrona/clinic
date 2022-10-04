@@ -6,17 +6,17 @@
 
       <form class="mt-3">
         <div>
-          <label htmlFor="name" class="form-label">Imię:&nbsp;</label>
+          <label for="name" class="form-label" [ngClass]="{'mb-0': editable}">Imię:&nbsp;</label>
           <label *ngIf="!editable" class="form-label">{{profile.name}}</label>
           <input *ngIf="editable" type="text" class="form-control mb-3" id="name" [defaultValue]="profile.name"/>
         </div>
         <div>
-          <label htmlFor="surname" class="form-label">Nazwisko:&nbsp;</label>
+          <label for="surname" class="form-label" [ngClass]="{'mb-0': editable}">Nazwisko:&nbsp;</label>
           <label *ngIf="!editable" class="form-label">{{profile.surname}}</label>
           <input *ngIf="editable" type="text" class="form-control mb-3" id="surname" [defaultValue]="profile.surname"/>
         </div>
         <div>
-          <label htmlFor="pwz-number" class="form-label">Numer PWZ:&nbsp;</label>
+          <label for="pwz-number" class="form-label" [ngClass]="{'mb-0': editable}">Numer PWZ:&nbsp;</label>
           <label *ngIf="!editable" class="form-label">{{profile.pwz}}</label>
           <input *ngIf="editable" type="text" class="form-control mb-3" id="pwz-number" [defaultValue]="profile.pwz"/>
         </div>
@@ -30,9 +30,7 @@
             </div>
             <div class="col-6">
               <button *ngIf="!editable" class="btn btn-primary w-100" (click)="edit()">Edit</button>
-
             </div>
-
           </div>
         </div>
       </form>

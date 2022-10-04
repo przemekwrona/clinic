@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PatientService} from "../../../services/PatientService";
 import {Router} from "@angular/router";
+import {SurveyType} from "../../../services/Profile";
 
 @Component({
   selector: 'app-patient-creation',
@@ -30,6 +31,13 @@ export class Patient {
   public name: string = '';
   public surname: string = '';
   public code: string = '';
+  public surveys: Survey[] = [];
+}
+
+export class Survey {
+  public id: string = '';
+  public surveyType: SurveyType = SurveyType.GENERAL;
+  public createDate: Date = new Date();
 }
 
 export class PatientResponse {

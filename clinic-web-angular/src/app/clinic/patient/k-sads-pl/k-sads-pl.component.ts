@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {ReportService} from "../../../services/ReportService";
+import {PatientService} from "../../../services/PatientService";
 
 @Component({
   selector: 'app-k-sads-pl',
@@ -9,12 +11,19 @@ import {ActivatedRoute} from "@angular/router";
 export class KSadsPLComponent implements OnInit {
 
   public kSadsPl: KSadsPl = new KSadsPl();
+  public patientCode: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.data.subscribe((data) => this.kSadsPl = data['report'])
+  constructor(private activatedRoute: ActivatedRoute, private patientService: PatientService) {
+    this.activatedRoute.data.subscribe((data) => this.kSadsPl = data['report'] || new KSadsPl());
+    this.patientCode = this.activatedRoute.snapshot.paramMap.get('patientId') || '';
   }
 
   ngOnInit(): void {
+  }
+
+  save(): void {
+    this.patientService.postReports(this.patientCode, "K_SADS_PL", JSON.stringify(this.kSadsPl))
+      .subscribe(response => console.log(response));
   }
 
 }

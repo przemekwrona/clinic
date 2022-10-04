@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {Patient} from "../../../services/Profile";
 
 @Component({
   selector: 'app-patient-reports',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PatientReportsComponent implements OnInit {
 
-  constructor() { }
+  public patientCode: string = '';
+  public patient: Patient = new Patient();
+
+  constructor(private route: ActivatedRoute) {
+    this.patientCode = route.snapshot.paramMap.get('patientId') || '';
+    this.route.data.subscribe((data) => this.patient = data['patient']);
+  }
 
   ngOnInit(): void {
   }

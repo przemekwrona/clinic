@@ -16,11 +16,11 @@
           <h5 class="card-title">
             <span class="fw-bold">{{patient.code}}</span>
 <!--            <span class="badge bg-info"> 3 </span>-->
-            <span> {{patient.name}} {{patient.name}}</span>
+            <span> {{patient.name}} {{patient.surname}}</span>
           </h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+<!--          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
           <a [routerLink]="['/patients', patient.code, 'reports']" class="btn btn-primary">Reports
-            <span class="badge bg-info"> 3</span></a>
+            <span class="badge bg-info"> {{patient.surveys.length}}</span></a>
         </div>
       </div>
     </div>
