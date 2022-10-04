@@ -28,6 +28,7 @@
     </properties>
 
     <modules>
+        <module>clinic-web-angular</module>
         <module>clinic-service</module>
     </modules>
 
