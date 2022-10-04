@@ -159,12 +159,15 @@ databaseChangeLog:
             startWith: 1
             tableName: patient
   - changeSet:
-      id: create-table-report
+      id: create-table-survey
       author: pwrona
       changes:
         - createTable:
-            tableName: report
+            tableName: survey
             columns:
+              - column:
+                  name: id
+                  type: int
               - column:
                   name: patient_id
                   type: int
@@ -172,8 +175,18 @@ databaseChangeLog:
                   name: create_date
                   type: datetime
               - column:
-                  name: report_type
+                  name: survey_type
                   type: varchar(30)
               - column:
-                  name: report
+                  name: survey
                   type: clob
+        - addPrimaryKey:
+            tableName: survey
+            columnNames: id
+            constraintName: pk_survey
+        - addAutoIncrement:
+            columnDataType: int
+            columnName: id
+            incrementBy: 1
+            startWith: 1
+            tableName: survey

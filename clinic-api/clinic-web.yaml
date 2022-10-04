@@ -17,7 +17,7 @@ paths:
         200:
           description: 'User is created'
 
-  /profiles:
+  /profile:
     get:
       operationId: getUserInfo
       summary: Return a one object list with user's profile
@@ -58,6 +58,24 @@ paths:
       responses:
         201:
           description: 'Id of created user'
+  /reports/{reportId}:
+    get:
+      operationId: getReportById
+      parameters:
+        - in: path
+          name: reportId
+          required: true
+          schema:
+            type: integer
+            description: Report id
+      responses:
+        200:
+          description: Report
+          content:
+            application/json:
+              schema:
+                type: string
+
   /report:
     post:
       operationId: createReport
@@ -98,7 +116,47 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Patients'
-
+  /patients/{patientId}/reports:
+    get:
+      operationId: getReports
+      parameters:
+        - in: path
+          name: patientId
+          required: true
+          schema:
+            type: string
+            description: User's code
+      responses:
+        200:
+          description: List of users' reports
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePatientRequest'
+    post:
+      operationId: assignReport
+      parameters:
+        - in: path
+          name: patientId
+          required: true
+          schema:
+            type: string
+            description: User's code
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Report'
+      responses:
+        200:
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
 components:
   schemas:
     UserRequest:
@@ -180,4 +238,17 @@ components:
       properties:
         id:
           type: number
-
+        surveyType:
+          type: string
+        createDate:
+          type: string
+          format: date-time
+    Report:
+      type: object
+      properties:
+        createDate:
+          type: string
+        reportType:
+          type: string
+        report:
+          type: string

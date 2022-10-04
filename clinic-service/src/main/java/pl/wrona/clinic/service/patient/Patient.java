@@ -1,8 +1,10 @@
 package pl.wrona.clinic.service.patient;
 
 import lombok.Data;
+import pl.wrona.clinic.service.report.Survey;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -15,4 +17,7 @@ public class Patient {
     private String name;
     private String surname;
     private String code;
+
+    @OneToMany(mappedBy = "patient")
+    private List<Survey> surveys;
 }
