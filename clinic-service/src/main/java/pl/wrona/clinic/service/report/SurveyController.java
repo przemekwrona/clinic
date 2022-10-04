@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-public class ReportController implements ReportApi {
-
-    private final ReportService reportService;
+public class SurveyController implements ReportApi {
 
     @Override
     public ResponseEntity<Void> createReport(CreateReportRequest createReportRequest) {
-        reportService.createReport(createReportRequest);
         return ResponseEntity.ok(null);
     }
 }
