@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import org.openapitools.api.ProfileApi;
 import org.openapitools.model.ProfileResponse;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api")
 public class ProfileController implements ProfileApi {
 
     private final ProfileService profileService;

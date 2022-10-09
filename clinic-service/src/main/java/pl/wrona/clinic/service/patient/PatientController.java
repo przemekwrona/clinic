@@ -7,6 +7,7 @@ import org.openapitools.model.CreatePatientResponse;
 import org.openapitools.model.InlineResponse200;
 import org.openapitools.model.Report;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
@@ -14,6 +15,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api")
 public class PatientController implements PatientsApi {
 
     private final PatientService patientService;
