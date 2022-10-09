@@ -28,7 +28,7 @@
     </properties>
 
     <modules>
-        <module>clinic-web-angular</module>
+        <module>clinic-web</module>
         <module>clinic-service</module>
     </modules>
 
