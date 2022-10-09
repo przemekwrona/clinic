@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar clinic-service/target/clinic-service-0.0.1-SNAPSHOT.jar
+web: java $JAVA_OPTS -Dserver.port=$PORT -jar clinic-service/target/clinic-service-0.0.1-SNAPSHOT.jar
