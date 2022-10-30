@@ -2,7 +2,7 @@
   "name": "routing-app",
   "version": "0.0.0",
   "scripts": {
-    "mock-backend": "json-server api/db.json --routes api/routes.json --no-cors=true",
+    "mock-backend": "json-server api/db.json --routes api/routes.json --no-cors=true --port 8080",
     "ng": "ng",
     "start": "ng serve",
     "dev": "npm run mock-backend & ng serve",

@@ -1,6 +1,17 @@
 {
   "yes": "yes",
   "no": "no",
+  "delete": "Delete",
+  "preview": "Preview",
+  "navbar": {
+    "yourProfile": "Your Profile",
+    "yourPatients": "Your Patients",
+    "yourResearches": "Your Researches"
+  },
+  "patients": {
+    "addNew": "Add NEW Report",
+    "reports": "Reports"
+  },
   "adhdIcd10": {
     "attentionDisorderInSchool": "Dziecko nie jest w stan utrzymać ciągłej i bliżej uwagi na szczegółach lub popełnia błędy z nieuwagi w szkole, pracy lub innej działalności.",
     "attentionDisorderDuringPlay": "Dziecku często nie udaje się utrzymać trwałej uwagi na zadaniach lub grach/zabawach.",

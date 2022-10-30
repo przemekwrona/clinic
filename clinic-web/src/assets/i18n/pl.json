@@ -1,6 +1,17 @@
 {
   "yes": "tak",
   "no": "nie",
+  "delete": "Usuń",
+  "preview": "Podgląd",
+  "navbar": {
+    "yourProfile": "Twój Profil",
+    "yourPatients": "Twoi Pacienci",
+    "yourResearches": "Twoje Badania"
+  },
+  "patients": {
+    "addNew": "Dodaj nowy raport",
+    "reports": "Raporty"
+  },
   "adhdIcd10": {
     "answers": {
       "3": "tak",
