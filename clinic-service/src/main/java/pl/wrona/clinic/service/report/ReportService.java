@@ -20,4 +20,8 @@ public class ReportService {
                 .orElse(null);
     }
 
+    public void deleteReportById(long reportId) {
+        surveyRepository.deleteById(reportId);
+    }
+
 }

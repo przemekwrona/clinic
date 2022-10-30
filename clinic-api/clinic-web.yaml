@@ -75,7 +75,23 @@ paths:
             application/json:
               schema:
                 type: string
-
+    delete:
+      operationId: deleteReportById
+      parameters:
+        - in: path
+          name: reportId
+          required: true
+          schema:
+            type: integer
+            format: int64
+            description: Report id
+      responses:
+        200:
+          description: Report
+          content:
+            application/json:
+              schema:
+                type: string
   /report:
     post:
       operationId: createReport

@@ -18,4 +18,8 @@ export class ReportService {
     return this.http.get<AdhdIcd10>(`/api/reports/${id}`);
   }
 
+  deleteReport(reportId: string): Observable<any> {
+    return this.http.delete<any>(`/api/reports/${reportId}`);
+  }
+
 }
