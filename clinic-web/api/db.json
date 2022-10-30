@@ -112,43 +112,27 @@
       ]
     }
   ],
-  "reports": [
-    {
+  "reports": {
       "id": 1,
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "gender": "MALE",
-      "ethnicity": "",
-      "isRaceBlack": false,
-      "isRaceAsian": false,
-      "isRaceWhite": true,
-      "isRaceOther": false,
-      "isRaceHawaiian": false,
-      "isRaceAmerican": false,
-      "livingPerson": "BOTH_BIOLOGICAL_PARENTS",
-      "informantPerson": "BOTH_BIOLOGICAL_PARENTS",
-      "primaryCaregiverFirstName": "Michał",
-      "primaryCaregiverLastName": "Kowalski",
-      "primaryCaregiverRelation": "BIOLOGICAL_FATHER",
-      "secondaryCaregiverFirstName": "Anita",
-      "secondaryCaregiverLastName": "Kowalska",
-      "secondaryCaregiverRelation": "BIOLOGICAL_MOTHER",
-      "didMotherHaveAnyIllnessInjuryDuringPregnancy": false,
-      "didMotherDrinkOrUseElicitDrugsDuringPregnancy": true,
-      "didMotherSmokeDuringPregnancy": false,
-      "wasTheBabyPremature": true,
-      "didTheBabyHaveAnyTroubleAtBirth": true,
-      "didTheBabyHaveAnyOtherTrouble": true
-    },
-    {
-      "id": 8,
-      "attentionDisorderInSchool": 2,
-      "attentionDisorderDuringPlay": 2,
-      "hearingDisorder": 1,
-      "losingThings": 1,
-      "forgetful": 1,
-      "firstName": "Jan",
-      "lastName": "Kowalski"
+      "name": "Jan",
+      "surname": "Kowalski",
+      "code": "JANKOW",
+      "surveys": [
+        {
+          "id": 1,
+          "surveyType": "K_SADS_PL",
+          "createDate": "2022-10-09T20:51:55.076486Z"
+        },
+        {
+          "id": 2,
+          "surveyType": "K_SADS_PL",
+          "createDate": "2022-10-09T20:51:56.565369Z"
+        },
+        {
+          "id": 3,
+          "surveyType": "K_SADS_PL",
+          "createDate": "2022-10-09T20:52:10.140278Z"
+        }
+      ]
     }
-  ]
 }

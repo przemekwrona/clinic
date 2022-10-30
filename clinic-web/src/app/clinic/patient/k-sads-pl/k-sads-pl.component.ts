@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ReportService} from "../../../services/ReportService";
 import {PatientService} from "../../../services/PatientService";
 
@@ -13,7 +13,7 @@ export class KSadsPLComponent implements OnInit {
   public kSadsPl: KSadsPl = new KSadsPl();
   public patientCode: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute, private patientService: PatientService) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private patientService: PatientService) {
     this.activatedRoute.data.subscribe((data) => this.kSadsPl = data['report'] || new KSadsPl());
     this.patientCode = this.activatedRoute.snapshot.paramMap.get('patientId') || '';
   }
@@ -23,7 +23,9 @@ export class KSadsPLComponent implements OnInit {
 
   save(): void {
     this.patientService.postReports(this.patientCode, "K_SADS_PL", JSON.stringify(this.kSadsPl))
-      .subscribe(response => console.log(response));
+      .subscribe(response => {
+        this.router.navigate(['patients', this.patientCode, 'reports']);
+      });
   }
 
 }

@@ -17,4 +17,11 @@ public class ReportsController implements ReportsApi {
     public ResponseEntity<String> getReportById(Integer reportId) {
         return ResponseEntity.ok(reportService.getReportById(reportId));
     }
+
+    @Override
+    public ResponseEntity<String> deleteReportById(Long reportId) {
+        reportService.deleteReportById(reportId);
+        return ResponseEntity.ok().build();
+    }
+
 }

@@ -3,28 +3,20 @@
     <div class="container">
       <div
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/"
+        <a href="/profile/overview"
            class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-          <i class="bi-alarm"></i>
-          <i class="bi-github" role="img" aria-label="GitHub"></i>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-               class="bi bi-hospital" viewBox="0 0 16 16">
-            <path
-              d="M8.5 5.034v1.1l.953-.55.5.867L9 7l.953.55-.5.866-.953-.55v1.1h-1v-1.1l-.953.55-.5-.866L7 7l-.953-.55.5-.866.953.55v-1.1h1ZM13.25 9a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM13 11.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Zm.25 1.75a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5Zm-11-4a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5A.25.25 0 0 0 3 9.75v-.5A.25.25 0 0 0 2.75 9h-.5Zm0 2a.25.25 0 0 0-.25.25v.5c0 .138.112.25.25.25h.5a.25.25 0 0 0 .25-.25v-.5a.25.25 0 0 0-.25-.25h-.5ZM2 13.25a.25.25 0 0 1 .25-.25h.5a.25.25 0 0 1 .25.25v.5a.25.25 0 0 1-.25.25h-.5a.25.25 0 0 1-.25-.25v-.5Z"/>
-            <path
-              d="M5 1a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1a1 1 0 0 1 1 1v4h3a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h3V3a1 1 0 0 1 1-1V1Zm2 14h2v-3H7v3Zm3 0h1V3H5v12h1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3Zm0-14H6v1h4V1Zm2 7v7h3V8h-3Zm-8 7V8H1v7h3Z"/>
-          </svg>
+          <img class="img-fluid img-thumbnail" src="/assets/logo.jpeg" width="75" />
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a routerLink="/profile/overview" class="nav-link px-2 link-light">Your profile</a>
+            <a routerLink="/profile/overview" class="nav-link px-2 link-light">{{"navbar.yourProfile" | translate}}</a>
           </li>
           <li>
-            <a routerLink="/patients" class="nav-link px-2 link-light">Your patients</a>
+            <a routerLink="/patients" class="nav-link px-2 link-light">{{"navbar.yourPatients" | translate}}</a>
           </li>
           <li>
-            <a routerLink="/profile/research" class="nav-link px-2 link-light">Your researchers</a>
+            <a routerLink="/profile/research" class="nav-link px-2 link-light">{{"navbar.yourResearches" | translate}}</a>
           </li>
         </ul>
 
