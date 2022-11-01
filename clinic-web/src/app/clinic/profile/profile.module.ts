@@ -10,6 +10,8 @@ import {SharedModule} from "../../shared/shared.module";
 import {ProfileService} from "../../services/ProfileService";
 import { ProjectItemComponent } from './research/project-item/project-item.component';
 import {PatientsResolver} from "./patient/patient.resolver";
+import {OverviewResolver} from "./overview/overview.resolver";
+import {UserService} from "../../services/UserService";
 
 
 @NgModule({
@@ -27,8 +29,10 @@ import {PatientsResolver} from "./patient/patient.resolver";
   ],
   providers: [
     ProfileService,
+    UserService,
     ProfileResolver,
-    PatientsResolver
+    PatientsResolver,
+    OverviewResolver
   ]
 })
 export class ProfileModule {

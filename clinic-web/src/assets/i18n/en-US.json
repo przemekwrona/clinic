@@ -8,6 +8,11 @@
     "yourPatients": "Your Patients",
     "yourResearches": "Your Researches"
   },
+  "profile": {
+    "overviewTab": "Overview",
+    "patientsTab": "Patients",
+    "researchTab": "Research"
+  },
   "patients": {
     "addNew": "Add NEW Report",
     "reports": "Reports"

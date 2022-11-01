@@ -40,13 +40,13 @@
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <a routerLink="/profile/overview" class="nav-link" [ngClass]="{'active': isActive(TABS.OVERVIEW)}"
-             aria-current="page">Overview</a>
+             aria-current="page">{{"profile.overviewTab" | translate}}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/profile/patients" class="nav-link" [ngClass]="{'active': isActive(TABS.PATIENTS)}">Patients</a>
+          <a routerLink="/profile/patients" class="nav-link" [ngClass]="{'active': isActive(TABS.PATIENTS)}">{{"profile.patientsTab" | translate}}</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/profile/research" class="nav-link" [ngClass]="{'active': isActive(TABS.RESEARCH)}">Research</a>
+          <a routerLink="/profile/research" class="nav-link" [ngClass]="{'active': isActive(TABS.RESEARCH)}">{{"profile.researchTab" | translate}}</a>
         </li>
       </ul>
 

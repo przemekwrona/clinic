@@ -12,6 +12,11 @@
     "addNew": "Dodaj nowy raport",
     "reports": "Raporty"
   },
+  "profile": {
+    "overviewTab": "Podgląd",
+    "patientsTab": "Pacienci",
+    "researchTab": "Badania"
+  },
   "adhdIcd10": {
     "answers": {
       "3": "tak",

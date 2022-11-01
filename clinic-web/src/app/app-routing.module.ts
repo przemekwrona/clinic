@@ -18,6 +18,7 @@ import {AdhdIcd10Resolver} from "./clinic/patient/adhd-icd10/adhd-icd10.resolver
 import {PatientCreationComponent} from "./clinic/patient/patient-creation/patient-creation.component";
 import {PatientReportsComponent} from "./clinic/patient/patient-reports/patient-reports.component";
 import {PatientReportsResolver} from "./clinic/patient/patient-reports/patient-reports.resolver";
+import {OverviewResolver} from "./clinic/profile/overview/overview.resolver";
 
 const routes: Routes = [{path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -35,6 +36,9 @@ const routes: Routes = [{path: 'login', component: LoginComponent},
             component: OverviewComponent,
             data: {
               tab: Tabs.OVERVIEW
+            },
+            resolve: {
+              summary: OverviewResolver
             }
           },
           {
