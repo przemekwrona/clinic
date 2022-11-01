@@ -193,6 +193,8 @@ components:
           type: string
         surname:
           type: string
+        pwz:
+          type: string
     AuthRequest:
       type: object
       properties:

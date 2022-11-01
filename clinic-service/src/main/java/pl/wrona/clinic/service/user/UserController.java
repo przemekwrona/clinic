@@ -6,10 +6,12 @@ import org.openapitools.model.Summary;
 import org.openapitools.model.UserRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/api")
 public class UserController implements UsersApi {
 
     private final UserService userService;

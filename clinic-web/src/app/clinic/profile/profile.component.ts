@@ -1,6 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {Profile} from "../../services/Profile";
 import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
+import {UserService} from "../../services/UserService";
+
+export class ProfileEditable {
+  public name: string = '';
+  public surname: string = '';
+  public pwz: string = '';
+}
 
 @Component({
   selector: 'app-profile',
@@ -11,11 +18,12 @@ export class ProfileComponent implements OnInit {
 
   public editable: boolean = false;
   public profile: Profile = new Profile();
+  public profileEditable: ProfileEditable = new ProfileEditable();
 
   public activeTab: Tabs | undefined;
   public TABS = Tabs;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private userService: UserService) {
 
     router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -51,14 +59,22 @@ export class ProfileComponent implements OnInit {
   }
 
   public save() {
+    this.userService.postNameSurname(this.profileEditable.name, this.profileEditable.surname).subscribe((response) => {
+      this.profile.name = this.profileEditable.name;
+      this.profile.surname = this.profileEditable.surname;
+    });
     this.editable = false;
   }
 
   public cancel() {
     this.editable = false;
+    this.profileEditable = new ProfileEditable();
   }
 
   public edit() {
+    this.profileEditable.name = this.profile.name;
+    this.profileEditable.surname = this.profile.surname;
+    this.profileEditable.pwz = this.profile.pwz;
     this.editable = true;
   }
 
