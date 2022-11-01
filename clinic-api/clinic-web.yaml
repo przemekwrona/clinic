@@ -16,6 +16,17 @@ paths:
       responses:
         200:
           description: 'User is created'
+  /users/summary:
+    get:
+      operationId: getSummary
+      summary: Return user summary
+      responses:
+        200:
+          description: 'Users summary'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Summary'
 
   /profile:
     get:
@@ -182,6 +193,8 @@ components:
           type: string
         surname:
           type: string
+        pwz:
+          type: string
     AuthRequest:
       type: object
       properties:
@@ -268,3 +281,12 @@ components:
           type: string
         report:
           type: string
+    Summary:
+      type: object
+      properties:
+        numberOfReports:
+          type: integer
+          format: int64
+        numberOfPatients:
+          type: integer
+          format: int64

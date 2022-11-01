@@ -4,7 +4,6 @@ import {AdhdIcd10Component} from "./adhd-icd10.component";
 import { AdhdIcd10QuestionComponent } from './adhd-icd10-question/adhd-icd10-question.component';
 import {ReportService} from "../../../services/ReportService";
 import {AdhdIcd10Resolver} from "./adhd-icd10.resolver";
-import {TranslateModule} from "@ngx-translate/core";
 import {SharedModule} from "../../../shared/shared.module";
 import { AdhdIcd10QuestionsSummaryComponent } from './adhd-icd10-questions-summary/adhd-icd10-questions-summary.component';
 

@@ -1,7 +1,26 @@
 <div class="container p-0">
   <div class="row mt-3">
     <div class="col-md-12">
-      <h4>Overview</h4>
+      <h4>{{"profile.overviewTab" | translate}}</h4>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{summary.numberOfPatients}}</h5>
+          <p class="card-text">Tylu masz pacientów</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="card-body">
+          <h5 class="card-title">{{summary.numberOfReports}}</h5>
+          <p class="card-text">Tyle ankiet przeprowadziłeś</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -19,7 +19,8 @@ public class ProfileService {
         return userRepository.findById(1L).map(appUser -> new ProfileResponse()
                         .name(appUser.getName())
                         .surname(appUser.getSurname())
-                        .pwz("54328080"))
-                .orElse(new ProfileResponse());
+                        .pwz("249936"))
+                .orElse(new ProfileResponse()
+                        .pwz("249936"));
     }
 }

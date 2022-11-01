@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
+import {Summary} from "../../../services/UserService";
 
 @Component({
   selector: 'app-overview',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OverviewComponent implements OnInit {
 
-  constructor() { }
+  public summary: Summary = new Summary();
+
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe((data) => this.summary = data['summary']);
   }
 
 }

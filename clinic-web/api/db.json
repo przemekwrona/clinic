@@ -33,7 +33,7 @@
   },
   "patients": [
     {
-      "id": "1",
+      "id": "WKD34",
       "code": "WKD34",
       "name": "Jan",
       "surname": "Kowalski",
@@ -56,7 +56,25 @@
           "type": "K_SADS_PL",
           "date": "2022-05-02"
         }
-      ]
+      ],
+      "reports": {
+        "id": 1,
+        "name": "Jan",
+        "surname": "Kowalski",
+        "code": "JANKOW",
+        "surveys": [
+          {
+            "id": 3,
+            "surveyType": "K_SADS_PL",
+            "createDate": "2022-10-09T20:52:10.140278Z"
+          },
+          {
+            "id": 11,
+            "surveyType": "K_SADS_PL",
+            "createDate": "2022-10-30T19:08:45.500672Z"
+          }
+        ]
+      }
     },
     {
       "id": "2",
@@ -82,6 +100,26 @@
           "type": "K_SADS_PL",
           "date": "2022-05-02"
         }
+      ],
+      "reports": [
+        {
+          "id": 3,
+          "name": "K-SADS-PL",
+          "type": "K_SADS_PL",
+          "date": "2022-05-02"
+        },
+        {
+          "id": 4,
+          "name": "K-SADS-PL",
+          "type": "K_SADS_PL",
+          "date": "2022-05-02"
+        },
+        {
+          "id": 5,
+          "name": "K-SADS-PL",
+          "type": "K_SADS_PL",
+          "date": "2022-05-02"
+        }
       ]
     },
     {
@@ -89,7 +127,8 @@
       "code": "MAN12",
       "name": "Joanna",
       "surname": "Kwiatkowska",
-      "surveys": []
+      "surveys": [],
+      "reports": []
     },
     {
       "id": "4",
@@ -112,27 +151,38 @@
       ]
     }
   ],
-  "reports": {
+  "reports": [
+    {
       "id": 1,
-      "name": "Jan",
-      "surname": "Kowalski",
-      "code": "JANKOW",
-      "surveys": [
-        {
-          "id": 1,
-          "surveyType": "K_SADS_PL",
-          "createDate": "2022-10-09T20:51:55.076486Z"
-        },
-        {
-          "id": 2,
-          "surveyType": "K_SADS_PL",
-          "createDate": "2022-10-09T20:51:56.565369Z"
-        },
-        {
-          "id": 3,
-          "surveyType": "K_SADS_PL",
-          "createDate": "2022-10-09T20:52:10.140278Z"
-        }
-      ]
+      "firstName": "Jan",
+      "lastName": "Kowalski",
+      "gender": "MALE",
+      "ethnicity": "LATINO",
+      "isRaceBlack": true,
+      "isRaceAsian": false,
+      "isRaceWhite": false,
+      "isRaceOther": false,
+      "isRaceHawaiian": false,
+      "isRaceAmerican": false,
+      "livingPerson": "BOTH_BIOLOGICAL_PARENTS",
+      "informantPerson": "BOTH_BIOLOGICAL_PARENTS",
+      "primaryCaregiverFirstName": "ada",
+      "primaryCaregiverLastName": "dfd",
+      "primaryCaregiverRelation": "STEPFATHER",
+      "secondaryCaregiverFirstName": "df",
+      "secondaryCaregiverLastName": "aaa",
+      "secondaryCaregiverRelation": "STEPFATHER",
+      "didMotherHaveAnyIllnessInjuryDuringPregnancy": true,
+      "didMotherTakeAnyMedicationsOtherThanVitaminsIron": true,
+      "didMotherDrinkOrUseElicitDrugsDuringPregnancy": true,
+      "didMotherSmokeDuringPregnancy": false,
+      "wasTheBabyPremature": false,
+      "didTheBabyHaveAnyTroubleAtBirth": true,
+      "didTheBabyHaveAnyOtherTrouble": true
     }
+  ],
+  "summary": {
+    "numberOfReports": 0,
+    "numberOfPatients": 1
+  }
 }
