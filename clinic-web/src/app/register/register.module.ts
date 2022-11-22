@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register.component';
 import { SharedModule } from "../shared/shared.module";
+import { RegisterService } from "../services/RegisterService";
 
 @NgModule({
   declarations: [
@@ -10,6 +11,10 @@ import { SharedModule } from "../shared/shared.module";
   imports: [
     CommonModule,
     SharedModule
+  ],
+  providers: [
+    RegisterService
   ]
 })
-export class RegisterModule { }
+export class RegisterModule {
+}
