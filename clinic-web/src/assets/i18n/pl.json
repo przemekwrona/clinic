@@ -44,6 +44,7 @@
     "login": "Zaloguj się",
     "forgotPassword": "Zapomniaeś hasła",
     "donNotHaveAccount": "Nie masz konta?",
-    "hasAlreadyAccount": "Masz już konto? Zaloguj się"
+    "hasAlreadyAccount": "Masz już konto? Zaloguj się",
+    "registrationAlert": "Wysłaliśmy na Twój email link który aktywuje Twoje konto. Kliknij go w celu weryfikacji Twoich danych i aktywacji logowania do systemu"
   }
 }
