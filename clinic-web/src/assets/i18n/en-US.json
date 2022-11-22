@@ -36,6 +36,7 @@
     "login": "Login",
     "forgotPassword": "Forgot password?",
     "donNotHaveAccount": "Don't have an account?",
-    "hasAlreadyAccount": "Have already account?"
+    "hasAlreadyAccount": "Have already account?",
+    "registrationAlert": "We have sent a link to your email that will activate your account. Click it to verify your data and activate logging into the system"
   }
 }
