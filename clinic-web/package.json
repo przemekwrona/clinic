@@ -4,12 +4,13 @@
   "scripts": {
     "mock-backend": "json-server api/db.json --routes api/routes.json --no-cors=true --port 8080",
     "ng": "ng",
-    "start": "ng serve",
-    "dev": "npm run mock-backend & ng serve",
-    "build": "ng build",
-    "prod": "ng build --output-path ../clinic-service/src/main/resources/static",
+    "start": "npm run generate & ng serve",
+    "dev": "npm run generate & npm run mock-backend & ng serve",
+    "build": "npm run generate & ng build",
+    "prod": "npm run generate & ng build --output-path ../clinic-service/src/main/resources/static",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "generate": "openapi --input ../clinic-api/clinic-web.yaml --output ./src/api/generated"
   },
   "private": true,
   "dependencies": {
@@ -43,6 +44,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "openapi-typescript-codegen": "^0.23.0",
     "typescript": "~4.7.2"
   }
 }
