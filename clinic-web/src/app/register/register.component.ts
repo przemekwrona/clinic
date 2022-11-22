@@ -12,4 +12,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getYear(): number {
+    return new Date().getFullYear()
+  }
+
 }

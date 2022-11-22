@@ -9,6 +9,8 @@ import {SharedModule} from "./shared/shared.module";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import {RegisterModule} from "./register/register.module";
+import {LoginModule} from "./login/login.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
       },
       defaultLanguage: 'en-US',
     }),
-    ClinicModule
+    ClinicModule,
+    RegisterModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [
