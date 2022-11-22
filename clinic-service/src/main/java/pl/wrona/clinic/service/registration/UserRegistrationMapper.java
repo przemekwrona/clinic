@@ -7,7 +7,7 @@ import pl.wrona.clinic.service.entity.AppUser;
 import java.util.function.Function;
 
 @Component
-public class UserRegistrationFactory implements Function<UserRegistrationRequest, AppUser> {
+public class UserRegistrationMapper implements Function<UserRegistrationRequest, AppUser> {
 
     @Override
     public AppUser apply(UserRegistrationRequest user) {
