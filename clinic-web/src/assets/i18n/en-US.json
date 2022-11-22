@@ -24,5 +24,18 @@
     "losingThings": "Dziecko często gubi rzeczy niezbędne do pracy lub innych zajęć, np. zabawki, przybory szkolne, ołówk, książki, narzędzia.",
     "externalStimuli": "Dziecko łatwo rozprasza się pod wpływem zewnętrznych bodźców.",
     "forgetful": "Dziecko często jest zaominalskie podczas codziennych zajęć."
+  },
+  "auth": {
+    "or": "Or",
+    "name": "Name",
+    "surname": "Surname",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remeber me",
+    "register": "Register",
+    "login": "Login",
+    "forgotPassword": "Forgot password?",
+    "donNotHaveAccount": "Don't have an account?",
+    "hasAlreadyAccount": "Have already account?"
   }
 }
