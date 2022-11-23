@@ -1,12 +1,20 @@
 {
   "yes": "yes",
   "no": "no",
+  "or": "or",
+  "and": "and",
   "delete": "Delete",
   "preview": "Preview",
   "navbar": {
     "yourProfile": "Your Profile",
     "yourPatients": "Your Patients",
-    "yourResearches": "Your Researches"
+    "yourResearches": "Your Researches",
+    "login": "Login",
+    "logout": "Sign out"
+  },
+  "clinic": {
+    "notLoggedUserAlert": "You are not a logged in user, therefore some of the functionality is preview.",
+    "notLoggedUserAlertActivateAccount": "to activate all system capabilities."
   },
   "profile": {
     "overviewTab": "Overview",

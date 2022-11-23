@@ -1,10 +1,11 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {ClinicComponent} from './clinic.component';
-import {RouterModule} from "@angular/router";
-import {ProfileModule} from "./profile/profile.module";
-import {SharedModule} from "../shared/shared.module";
-import {PatientModule} from "./patient/patient.module";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ClinicComponent } from './clinic.component';
+import { RouterModule } from "@angular/router";
+import { ProfileModule } from "./profile/profile.module";
+import { SharedModule } from "../shared/shared.module";
+import { PatientModule } from "./patient/patient.module";
+import { LoginService } from "../services/LoginService";
 
 
 @NgModule({
@@ -17,6 +18,9 @@ import {PatientModule} from "./patient/patient.module";
     SharedModule,
     ProfileModule,
     PatientModule
+  ],
+  providers: [
+    LoginService
   ]
 })
 export class ClinicModule {

@@ -39,7 +39,8 @@
               <button type="button" class="btn btn-primary btn-lg btn-block w-100"
                       (click)="login()">  {{ 'auth.login' | translate}}</button>
               <p class="small fw-bold mt-2 pt-1 mb-0">{{"auth.donNotHaveAccount" | translate}}
-                <a href="/register" class="link-danger">{{"auth.register" | translate}}</a>
+                <a [routerLink]="['register']"
+                   class="link-danger">{{"auth.register" | translate}}</a>
               </p>
             </div>
 

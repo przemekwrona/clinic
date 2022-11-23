@@ -61,13 +61,14 @@
                 <!--                  {{ 'auth.rememberMe' | translate}}-->
                 <!--                </label>-->
               </div>
-              <a href="/login" class="text-body">
+              <a [routerLink]="['login']" class="text-body">
                 {{"auth.hasAlreadyAccount" | translate}}
               </a>
             </div>
 
             <div class="text-center mt-4 pt-2">
-              <button onClick={handleRegister} class="btn btn-primary btn-lg btn-block w-100" (click)="register()">
+              <button onClick={handleRegister} class="btn btn-primary btn-lg btn-block w-100"
+                      (click)="register()">
                 {{"auth.register" | translate}}
               </button>
             </div>

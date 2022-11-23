@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from "../services/LoginService";
 
 @Component({
   selector: 'app-clinic',
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ClinicComponent implements OnInit {
 
-  constructor() {
+  constructor(private loginService: LoginService) {
   }
 
   ngOnInit(): void {
@@ -15,6 +16,10 @@ export class ClinicComponent implements OnInit {
 
   getYear(): number {
     return new Date().getFullYear();
+  }
+
+  showAlert() {
+    return this.loginService.isLogged();
   }
 
 }

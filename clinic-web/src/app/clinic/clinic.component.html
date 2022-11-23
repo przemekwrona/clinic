@@ -3,82 +3,100 @@
     <div class="container">
       <div
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/profile/overview"
+        <a [routerLink]="['profile', 'overview']"
            class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-          <img class="img-fluid img-thumbnail" src="/assets/logo.jpeg" width="75" />
+          <img class="img-fluid img-thumbnail" src="/assets/logo.jpeg" width="75"/>
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a routerLink="/profile/overview" class="nav-link px-2 link-light">{{"navbar.yourProfile" | translate}}</a>
+            <a routerLink="/profile/overview"
+               class="nav-link px-2 link-light">{{"navbar.yourProfile" | translate}}</a>
           </li>
           <li>
-            <a routerLink="/patients" class="nav-link px-2 link-light">{{"navbar.yourPatients" | translate}}</a>
+            <a routerLink="/patients"
+               class="nav-link px-2 link-light">{{"navbar.yourPatients" | translate}}</a>
           </li>
           <li>
-            <a routerLink="/profile/research" class="nav-link px-2 link-light">{{"navbar.yourResearches" | translate}}</a>
+            <a routerLink="/profile/research"
+               class="nav-link px-2 link-light">{{"navbar.yourResearches" | translate}}</a>
           </li>
         </ul>
 
         <div dropdown class="dropdown text-end">
           <a dropdownToggle class="d-block link-dark text-decoration-none dropdown-toggle"
              id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32"
-                 class="rounded-circle"/>
+            <img src="/assets/avatar-0f4995dc21b4884fc33d936585e719b0.jpg" alt="mdo" width="32"
+                 height="32" class="rounded-circle"/>
           </a>
           <ul *dropdownMenu class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li>
-              <a routerLink="/profile/overview" class="dropdown-item">{{"navbar.yourProfile" | translate}}</a>
+              <a routerLink="/profile/overview"
+                 class="dropdown-item">{{"navbar.yourProfile" | translate}}</a>
             </li>
             <li>
-              <a routerLink="/profile/patients" class="dropdown-item">{{"navbar.yourPatients" | translate}}</a>
+              <a routerLink="/profile/patients"
+                 class="dropdown-item">{{"navbar.yourPatients" | translate}}</a>
             </li>
             <li>
-              <a routerLink="/profile/research" class="dropdown-item">{{"navbar.yourResearches" | translate}}</a>
+              <a routerLink="/profile/research"
+                 class="dropdown-item">{{"navbar.yourResearches" | translate}}</a>
             </li>
             <li>
               <hr class="dropdown-divider"/>
             </li>
             <li>
-              <a routerLink="/login" class="dropdown-item">Login</a>
+              <a routerLink="/login" class="dropdown-item">{{"navbar.login" | translate}}</a>
             </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li>
+              <a [routerLink]="['login']" [queryParams]="{isLogout: true}"
+                 class="dropdown-item">{{"navbar.logout" | translate}}</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
   </header>
 
+  <div class="alert alert-danger" role="alert" *ngIf="showAlert">
+    {{"clinic.notLoggedUserAlert" | translate}}
+    <a routerLink="/login"
+       class="dropdown-item d-inline link-danger">{{"auth.login" | translate}}</a>
+    {{"or" | translate}}
+    <a routerLink="/register"
+       class="dropdown-item d-inline link-danger">{{"auth.register" | translate}}</a>
+    {{"clinic.notLoggedUserAlertActivateAccount" | translate}}
+  </div>
+
   <div class="container clinic-content">
     <router-outlet></router-outlet>
   </div>
 
   <footer class="bg-dark text-center text-white mt-3">
-    <div class="container p-3 pb-0">
-      <section>
-        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-          class="fa fa-facebook"></i></a>
+    <!--    <div class="container p-3 pb-0">-->
+    <!--      <section>-->
+    <!--        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i-->
+    <!--          class="fa fa-facebook"></i></a>-->
 
-        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-          class="fa fa-twitter"></i></a>
+    <!--        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i-->
+    <!--          class="fa fa-twitter"></i></a>-->
 
-        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-          class="fa fa-google"></i></a>
+    <!--        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i-->
+    <!--          class="fa fa-google"></i></a>-->
 
-        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-          class="fa fa-instagram"></i></a>
+    <!--        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i-->
+    <!--          class="fa fa-instagram"></i></a>-->
 
-        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-          class="fa fa-linkedin"></i></a>
+    <!--        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i-->
+    <!--          class="fa fa-linkedin"></i></a>-->
 
-        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i
-          class="fa fa-github"></i></a>
-      </section>
-    </div>
+    <!--        <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"><i-->
+    <!--          class="fa fa-github"></i></a>-->
+    <!--      </section>-->
+    <!--    </div>-->
 
     <div class="text-center p-3 bg-dark">
-      © {{getYear()}} Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © {{getYear()}} All rights reserved.
     </div>
   </footer>
 </div>
