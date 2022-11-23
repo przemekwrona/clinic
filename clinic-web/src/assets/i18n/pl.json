@@ -1,12 +1,20 @@
 {
   "yes": "tak",
   "no": "nie",
+  "or": "lub",
+  "and": "i",
   "delete": "Usuń",
   "preview": "Podgląd",
   "navbar": {
     "yourProfile": "Twój Profil",
     "yourPatients": "Twoi Pacienci",
-    "yourResearches": "Twoje Badania"
+    "yourResearches": "Twoje Badania",
+    "login": "Zaloguj się",
+    "logout": "Zarejestruj się"
+  },
+  "clinic": {
+    "notLoggedUserAlert": "Nie jesteś zalogowanym użytkownikiem dlatego część funkcjonalności ma charakter podglądowy.",
+    "notLoggedUserAlertActivateAccount": "aby aktywować wszystkie możliwośći systemu."
   },
   "patients": {
     "addNew": "Dodaj nowy raport",

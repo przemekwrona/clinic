@@ -24,4 +24,8 @@ export class LoginService {
     return this.loggedUser;
   }
 
+  isLogged(): boolean {
+    return this.loggedUser.token == null;
+  }
+
 }
