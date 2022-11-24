@@ -13,16 +13,40 @@
             {{ 'auth.registrationAlert' | translate}}
           </div>
 
-          <form>
-            <div class="form-outline mb-4">
+          <form [formGroup]="loginForm" (submit)="login()">
+            <div class="form-outline">
               <input type="email" id="email" name="email" class="form-control form-control-lg"
+                     formControlName="username"
                      [(ngModel)]="username" placeholder="{{ 'auth.email' | translate}}"/>
+              <div class="error-container">
+                <div class="alert"
+                     *ngIf="loginForm.invalid && isClickLogin">
+                  <p *ngIf="loginForm.controls.username.errors?.['required']">
+                    {{"auth.mailIsRequired" | translate}}
+                  </p>
+                  <p *ngIf="loginForm.controls.username.errors?.['minlength']">
+                    {{"auth.incorrectEmail" | translate}}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div class="form-outline mb-3">
+            <div class="form-outline">
               <input type="password" id="password" name="password" [(ngModel)]="password"
+                     formControlName="password"
                      class="form-control form-control-lg"
                      placeholder="{{ 'auth.password' | translate}}"/>
+              <div class="error-container">
+                <div class="alert"
+                     *ngIf="loginForm.invalid && isClickLogin">
+                  <p *ngIf="loginForm.controls.password.errors?.['required']">
+                    {{"auth.passwordIsRequired" | translate}}
+                  </p>
+                  <p *ngIf="loginForm.controls.password.errors?.['minlength']">
+                    {{"auth.passwordMinLength" | translate}}
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
@@ -35,11 +59,12 @@
               <!--              <a href="#!" class="text-body">{{"auth.forgotPassword" | translate}}</a>-->
             </div>
 
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="button" class="btn btn-primary btn-lg btn-block w-100"
-                      (click)="login()">  {{ 'auth.login' | translate}}</button>
+            <div class="text-center text-lg-start pt-2">
+              <button type="submit" class="btn btn-primary btn-lg btn-block w-100">
+                {{ 'auth.login' | translate}}
+              </button>
               <p class="small fw-bold mt-2 pt-1 mb-0">{{"auth.donNotHaveAccount" | translate}}
-                <a [routerLink]="['register']"
+                <a [routerLink]="['/register']"
                    class="link-danger">{{"auth.register" | translate}}</a>
               </p>
             </div>
