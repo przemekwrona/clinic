@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from "@angular/router";
 import { LoginService } from "../services/LoginService";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -9,10 +10,23 @@ import { LoginService } from "../services/LoginService";
 })
 export class LoginComponent implements OnInit {
 
+  public isClickLogin = false;
+
   public username = '';
   public password = '';
 
   public isRegistration = false;
+
+  loginForm = new FormGroup({
+    username: new FormControl(this.username, [
+      Validators.required,
+      Validators.email
+    ]),
+    password: new FormControl(this.password, [
+      Validators.required,
+      Validators.minLength(8)
+    ])
+  })
 
   constructor(private route: ActivatedRoute, private loginService: LoginService, private router: Router) {
   }
@@ -29,11 +43,16 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.username, this.password).subscribe((authResponse) => {
-      this.username = '';
-      this.password = '';
-      this.router.navigate(["profile", "overview"])
-    });
+    this.isClickLogin = true;
+
+    if (this.loginForm.valid) {
+      this.loginService.login(this.username, this.password).subscribe((authResponse) => {
+        this.username = '';
+        this.password = '';
+        this.router.navigate(["profile", "overview"])
+      });
+    }
+
   }
 
 }

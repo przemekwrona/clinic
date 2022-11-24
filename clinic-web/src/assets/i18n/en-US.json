@@ -45,6 +45,14 @@
     "forgotPassword": "Forgot password?",
     "donNotHaveAccount": "Don't have an account?",
     "hasAlreadyAccount": "Have already account?",
-    "registrationAlert": "We have sent a link to your email that will activate your account. Click it to verify your data and activate logging into the system"
+    "registrationAlert": "We have sent a link to your email that will activate your account. Click it to verify your data and activate logging into the system",
+    "nameIsRequired": "Name is required",
+    "nameMinLength": "Name must be at least 4 characters long.",
+    "surnameIsRequired": "Surname is required",
+    "surnameMinLength": "Surname must be at least 4 characters long.",
+    "mailIsRequired": "Mail is required",
+    "incorrectEmail": "Write correct email",
+    "passwordIsRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 8 characters long."
   }
 }

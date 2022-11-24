@@ -22,3 +22,17 @@ form.default-report {
     }
   }
 }
+
+div.error-container {
+  min-height: 2.5rem;
+  div.alert {
+    padding: 0;
+    margin-bottom: 0;
+    color: $danger;
+
+    p {
+      margin-top: 4px;
+      margin-bottom: 0;
+    }
+  }
+}

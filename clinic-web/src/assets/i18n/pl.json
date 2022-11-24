@@ -53,6 +53,14 @@
     "forgotPassword": "Zapomniaeś hasła",
     "donNotHaveAccount": "Nie masz konta?",
     "hasAlreadyAccount": "Masz już konto? Zaloguj się",
-    "registrationAlert": "Wysłaliśmy na Twój email link który aktywuje Twoje konto. Kliknij go w celu weryfikacji Twoich danych i aktywacji logowania do systemu"
+    "registrationAlert": "Wysłaliśmy na Twój email link który aktywuje Twoje konto. Kliknij go w celu weryfikacji Twoich danych i aktywacji logowania do systemu",
+    "nameIsRequired": "Imię jest wymagane",
+    "nameMinLength": "Imię powino składać się z co najmniej 3 znaków",
+    "surnameIsRequired": "Nazwisko jest wymagane",
+    "surnameMinLength": "Nazwisko powino składać się z co najmniej 3 znaków",
+    "mailIsRequired": "Mail jest wymagany",
+    "incorrectEmail": "Wprowadź poprawny email",
+    "passwordIsRequired": "Hasło jest wymagane",
+    "passwordMinLength": "Hasoło powinno sładać się z conajmniej 8 znaków"
   }
 }

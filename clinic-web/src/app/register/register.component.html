@@ -8,7 +8,7 @@
             class="img-fluid" alt="Sample image"/>
         </div>
         <div class="col-md-8 col-lg-6 col-xl-4">
-          <form>
+          <form [formGroup]="registrationForm" (submit)="register()">
             <!--            <div-->
             <!--              class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">-->
             <!--              <p class="lead fw-normal mb-0 me-3">Sign in with</p>-->
@@ -29,28 +29,71 @@
               <p class="text-center fw-bold mx-0 mb-0">{{"auth.or" | translate}}</p>
             </div>
 
-            <div class="form-outline mb-4">
+            <div class="form-outline">
               <input type="text" id="firstName" name="firstName" [(ngModel)]="user.name"
-                     class="form-control form-control-lg"
-                     placeholder="{{ 'auth.name' | translate}}"/>
+                     formControlName="name" class="form-control form-control-lg"
+                     placeholder="{{ 'auth.name' | translate}}" required minlength="3"/>
+              <div class="error-container">
+                <div class="alert"
+                     *ngIf="registrationForm.invalid && isClickRegister">
+                  <p *ngIf="registrationForm.controls.name.errors?.['required']">
+                    {{"auth.nameIsRequired" | translate}}
+                  </p>
+                  <p *ngIf="registrationForm.controls.name.errors?.['minlength']">
+                    {{"auth.nameMinLength" | translate}}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div class="form-outline mb-4">
+            <div class="form-outline">
               <input type="text" id="surname" name="surname" [(ngModel)]="user.surname"
-                     class="form-control form-control-lg"
-                     placeholder="{{ 'auth.surname' | translate}}"/>
+                     formControlName="surname" class="form-control form-control-lg"
+                     placeholder="{{ 'auth.surname' | translate}}" required minlength="3"/>
+              <div class="error-container">
+                <div class="alert" *ngIf="registrationForm.invalid && isClickRegister">
+                  <p *ngIf="registrationForm.controls.surname.errors?.['required']">
+                    {{"auth.surnameIsRequired" | translate}}
+                  </p>
+                  <p *ngIf="registrationForm.controls.surname.errors?.['minlength']">
+                    {{"auth.surnameMinLength" | translate}}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div class="form-outline mb-4">
+            <div class="form-outline">
               <input type="email" id="email" name="email" [(ngModel)]="user.email"
-                     class="form-control form-control-lg"
-                     placeholder="{{ 'auth.email' | translate}}"/>
+                     formControlName="email" class="form-control form-control-lg"
+                     placeholder="{{ 'auth.email' | translate}}" required minlength="3"/>
+              <div class="error-container">
+                <div class="alert"
+                     *ngIf="registrationForm.invalid && isClickRegister">
+                  <p *ngIf="registrationForm.controls.email.errors?.['required']">
+                    {{"auth.mailIsRequired" | translate}}
+                  </p>
+                  <p *ngIf="registrationForm.controls.email.errors?.['email']">
+                    {{"auth.incorrectEmail" | translate}}
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="form-outline mb-3">
               <input type="password" id="password" name="password" [(ngModel)]="user.password"
-                     class="form-control form-control-lg"
-                     placeholder="{{'auth.password' | translate}}"/>
+                     formControlName="password" class="form-control form-control-lg"
+                     placeholder="{{'auth.password' | translate}}" required minlength="8"/>
+              <div class="error-container">
+                <div class="alert"
+                     *ngIf="registrationForm.invalid && isClickRegister">
+                  <p *ngIf="registrationForm.controls.password.errors?.['required']">
+                    {{"auth.passwordIsRequired" | translate}}
+                  </p>
+                  <p *ngIf="registrationForm.controls.password.errors?.['minlength']">
+                    {{"auth.passwordMinLength" | translate}}
+                  </p>
+                </div>
+              </div>
             </div>
 
             <div class="d-flex justify-content-between align-items-center">
@@ -61,14 +104,12 @@
                 <!--                  {{ 'auth.rememberMe' | translate}}-->
                 <!--                </label>-->
               </div>
-              <a [routerLink]="['login']" class="text-body">
-                {{"auth.hasAlreadyAccount" | translate}}
-              </a>
+              <a [routerLink]="['/login']"
+                 class="text-body">{{"auth.hasAlreadyAccount" | translate}}</a>
             </div>
 
             <div class="text-center mt-4 pt-2">
-              <button onClick={handleRegister} class="btn btn-primary btn-lg btn-block w-100"
-                      (click)="register()">
+              <button class="btn btn-primary btn-lg btn-block w-100">
                 {{"auth.register" | translate}}
               </button>
             </div>
