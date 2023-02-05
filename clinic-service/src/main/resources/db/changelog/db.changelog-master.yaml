@@ -23,7 +23,7 @@ databaseChangeLog:
                   type: varchar(50)
               - column:
                   name: password
-                  type: varchar(50)
+                  type: varchar(100)
         - addNotNullConstraint:
             columnName: id
             tableName: app_user
@@ -130,6 +130,32 @@ databaseChangeLog:
                   name: description
                   value: Role Admin
   - changeSet:
+      id: create-table-doctor
+      author: pwrona
+      changes:
+        - createTable:
+            tableName: doctor
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  constraints:
+                    - primaryKey: true
+                    - primaryKeyName: pk_doctor
+              - column:
+                  name: app_user_id
+                  type: int
+                  constraints:
+                    - nullable: false
+                    - foreignKeyName: doctor_app_user_fk
+                    - references: app_user(id)
+        - addAutoIncrement:
+            columnDataType: int
+            columnName: id
+            incrementBy: 1
+            startWith: 1
+            tableName: doctor
+  - changeSet:
       id: create-table-patient
       author: pwrona
       changes:
@@ -148,6 +174,13 @@ databaseChangeLog:
               - column:
                   name: code
                   type: varchar(8)
+              - column:
+                  name: app_user_id
+                  type: int
+                  constraints:
+                    - nullable: false
+                    - foreignKeyName: patient_app_user_fk
+                    - references: app_user(id)
         - addPrimaryKey:
             tableName: patient
             columnNames: id
@@ -159,34 +192,73 @@ databaseChangeLog:
             startWith: 1
             tableName: patient
   - changeSet:
-      id: create-table-survey
+      id: create-table-medical-examination
       author: pwrona
       changes:
         - createTable:
-            tableName: survey
+            tableName: medical_examination
             columns:
               - column:
                   name: id
                   type: int
+                  constraints:
+                    - primaryKey: true
+                    - primaryKeyName: pk_medical_examination
+              - column:
+                  name: doctor_id
+                  type: int
+                  constraints:
+                    - nullable: false
+                    - foreignKeyName: medical_examination_doctor_fk
+                    - references: doctor(id)
               - column:
                   name: patient_id
                   type: int
-              - column:
-                  name: create_date
-                  type: datetime
-              - column:
-                  name: survey_type
-                  type: varchar(30)
-              - column:
-                  name: survey
-                  type: clob
-        - addPrimaryKey:
-            tableName: survey
-            columnNames: id
-            constraintName: pk_survey
+                  constraints:
+                    - nullable: false
+                    - foreignKeyName: medical_examination_patient_fk
+                    - references: patient(id)
         - addAutoIncrement:
             columnDataType: int
             columnName: id
             incrementBy: 1
             startWith: 1
-            tableName: survey
+            tableName: medical_examination
+        - changeSet:
+          id: create-table-survey
+          author: pwrona
+          changes:
+            - createTable:
+                tableName: survey
+                columns:
+                  - column:
+                      name: id
+                      type: int
+                      constraints:
+                        - primaryKey: true
+                        - primaryKeyName: pk_survey
+                  - column:
+                      name: patient_id
+                      type: int
+                  - column:
+                      name: create_date
+                      type: datetime
+                  - column:
+                      name: survey_type
+                      type: varchar(30)
+                  - column:
+                      name: survey
+                      type: clob
+                  - column:
+                      name: medical_examination_id
+                      type: int
+                      constraints:
+                        - nullable: false
+                        - foreignKeyName: survey_medical_examination_fk
+                        - references: medical_examination(id)
+            - addAutoIncrement:
+                columnDataType: int
+                columnName: id
+                incrementBy: 1
+                startWith: 1
+                tableName: survey

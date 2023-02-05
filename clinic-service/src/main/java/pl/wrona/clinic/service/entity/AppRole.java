@@ -4,10 +4,11 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import org.springframework.security.core.GrantedAuthority;
 
 @Data
 @Entity
-public class AppRole {
+public class AppRole implements GrantedAuthority {
 
     @Id
     @Enumerated(EnumType.STRING)
@@ -18,5 +19,10 @@ public class AppRole {
     private String description;
 
     @ManyToMany(mappedBy = "roles")
-    private List<AppUser> users;
+    private List<AppUser> appUsers;
+
+    @Override
+    public String getAuthority() {
+        return name;
+    }
 }
