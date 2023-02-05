@@ -2,6 +2,7 @@ package pl.wrona.clinic.service.registration;
 
 import lombok.AllArgsConstructor;
 import org.openapitools.model.UserRegistrationRequest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import pl.wrona.clinic.service.entity.AppUser;
 import pl.wrona.clinic.service.entity.UserRepository;
@@ -15,6 +16,7 @@ public class RegistrationService {
 
     private final UserRepository userRepository;
     private final RoleService roleService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     private final UserRegistrationMapper userRegistrationFactory;
 
@@ -23,7 +25,8 @@ public class RegistrationService {
 
         AppUser user = userRegistrationFactory.apply(userRegistrationRequest);
         user.setRoles(roleService.findDefaultListOfRoles());
-        user.setPassword(userRegistrationRequest.getPassword());
+
+        user.setPassword(bCryptPasswordEncoder.encode(userRegistrationRequest.getPassword()));
 
         userRepository.save(user);
     }

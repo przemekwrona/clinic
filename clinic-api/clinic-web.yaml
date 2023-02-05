@@ -198,7 +198,7 @@ components:
     AuthRequest:
       type: object
       properties:
-        name:
+        email:
           type: string
         password:
           type: string
@@ -211,6 +211,10 @@ components:
           type: string
         token:
           type: string
+        roles:
+          type: array
+          items:
+            type: string
     UserRegistrationRequest:
       type: object
       properties:

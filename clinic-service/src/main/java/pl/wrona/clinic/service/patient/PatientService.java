@@ -2,7 +2,11 @@ package pl.wrona.clinic.service.patient;
 
 import lombok.AllArgsConstructor;
 import org.openapitools.model.CreatePatientRequest;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import pl.wrona.clinic.service.entity.AppUser;
+import pl.wrona.clinic.service.entity.UserRepository;
 import pl.wrona.clinic.service.report.Survey;
 import pl.wrona.clinic.service.report.SurveyRepository;
 
@@ -19,6 +23,7 @@ public class PatientService {
 
     private final PatientRepository patientRepository;
     private final SurveyRepository surveyRepository;
+    private final UserRepository userRepository;
 
     public Long createPatient(CreatePatientRequest createPatientRequest) {
         Patient patient = new Patient();
@@ -32,6 +37,11 @@ public class PatientService {
 
     @Transactional
     public List<CreatePatientRequest> getPatients() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        AppUser appUser = userRepository.findByUsername(authentication.getName());
+
+
         return patientRepository.findAll().stream()
                 .map(patient -> new CreatePatientRequest()
                         .id(BigDecimal.valueOf(patient.getId()))
