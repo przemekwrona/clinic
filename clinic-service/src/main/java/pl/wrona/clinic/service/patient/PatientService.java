@@ -5,6 +5,8 @@ import org.openapitools.model.CreatePatientRequest;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import pl.wrona.clinic.service.doctor.Doctor;
+import pl.wrona.clinic.service.doctor.DoctorRepository;
 import pl.wrona.clinic.service.entity.AppUser;
 import pl.wrona.clinic.service.entity.UserRepository;
 import pl.wrona.clinic.service.report.Survey;
@@ -23,13 +25,18 @@ public class PatientService {
 
     private final PatientRepository patientRepository;
     private final SurveyRepository surveyRepository;
-    private final UserRepository userRepository;
+    private final DoctorRepository doctorRepository;
 
+    @Transactional
     public Long createPatient(CreatePatientRequest createPatientRequest) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Doctor doctor = doctorRepository.findByEmail(authentication.getName());
+
         Patient patient = new Patient();
         patient.setName(createPatientRequest.getName());
         patient.setSurname(createPatientRequest.getSurname());
         patient.setCode(createPatientRequest.getCode());
+        patient.setDoctor(doctor);
 
         Patient savedPatient = patientRepository.save(patient);
         return savedPatient.getId();
@@ -38,11 +45,9 @@ public class PatientService {
     @Transactional
     public List<CreatePatientRequest> getPatients() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        Doctor doctor = doctorRepository.findByEmail(authentication.getName());
 
-        AppUser appUser = userRepository.findByUsername(authentication.getName());
-
-
-        return patientRepository.findAll().stream()
+        return patientRepository.findAllByDoctor(doctor).stream()
                 .map(patient -> new CreatePatientRequest()
                         .id(BigDecimal.valueOf(patient.getId()))
                         .name(patient.getName())

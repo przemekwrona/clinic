@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { map, Observable } from "rxjs";
-import { AuthRequest, AuthResponse } from "../../api/generated";
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {map, Observable} from "rxjs";
+import {AuthRequest, AuthResponse} from "../../api/generated";
 
 @Injectable()
 export class LoginService {
@@ -13,11 +13,11 @@ export class LoginService {
 
   login(name: string, password: string): Observable<AuthResponse> {
     const authRequest: AuthRequest = {};
-    authRequest.name = name;
+    authRequest.email = name;
     authRequest.password = password;
 
     return this.http.post<AuthResponse>(`/api/login`, authRequest)
-    .pipe(map(response => this.loggedUser = response));
+      .pipe(map(response => this.loggedUser = response));
   }
 
   getLoggedUser(): AuthResponse {
@@ -26,6 +26,10 @@ export class LoginService {
 
   isLogged(): boolean {
     return this.loggedUser.token == null;
+  }
+
+  refreshToken(token: string) {
+    this.loggedUser.token = token;
   }
 
 }
