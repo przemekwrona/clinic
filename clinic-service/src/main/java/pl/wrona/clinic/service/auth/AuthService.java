@@ -11,6 +11,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 import pl.wrona.clinic.service.entity.AppUser;
 
+import javax.transaction.Transactional;
+
 @Service
 @AllArgsConstructor
 public class AuthService {
@@ -33,4 +35,5 @@ public class AuthService {
                         .collect(Collectors.toList()))
                 .token(jsonWebTokenUtils.generateToken(authentication.getName()));
     }
+
 }

@@ -7,10 +7,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ClinicModule} from "./clinic/clinic.module";
 import {SharedModule} from "./shared/shared.module";
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {HttpClient} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClient} from "@angular/common/http";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {RegisterModule} from "./register/register.module";
 import {LoginModule} from "./login/login.module";
+import {AuthenticationInterceptor} from "./services/AuthenticationInterceptor";
 
 @NgModule({
   declarations: [
@@ -35,7 +36,11 @@ import {LoginModule} from "./login/login.module";
     RegisterModule,
     LoginModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthenticationInterceptor,
+    multi: true,
+  }],
   bootstrap: [
     AppComponent
   ]
