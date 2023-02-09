@@ -48,13 +48,17 @@
           <a routerLink="/profile/overview" class="nav-link" [ngClass]="{'active': isActive(TABS.OVERVIEW)}"
              aria-current="page">{{"profile.overviewTab" | translate}}</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/profile/patients" class="nav-link"
-             [ngClass]="{'active': isActive(TABS.PATIENTS)}">{{"profile.patientsTab" | translate}}</a>
-        </li>
+<!--        <li class="nav-item">-->
+<!--          <a routerLink="/profile/patients" class="nav-link"-->
+<!--             [ngClass]="{'active': isActive(TABS.PATIENTS)}">{{"profile.patientsTab" | translate}}</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a routerLink="/profile/research" class="nav-link"-->
+<!--             [ngClass]="{'active': isActive(TABS.RESEARCH)}">{{"profile.researchTab" | translate}}</a>-->
+<!--        </li>-->
         <li class="nav-item">
           <a routerLink="/profile/research" class="nav-link"
-             [ngClass]="{'active': isActive(TABS.RESEARCH)}">{{"profile.researchTab" | translate}}</a>
+             [ngClass]="{'active': isActive(TABS.REPORT)}">{{"profile.reportTab" | translate}}</a>
         </li>
       </ul>
 

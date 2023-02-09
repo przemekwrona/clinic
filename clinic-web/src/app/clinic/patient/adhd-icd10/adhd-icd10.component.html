@@ -27,57 +27,81 @@
     <h5 class="mt-3">ZABURZENIA UWAGI</h5>
   </div>
 
-  <app-adhd-icd10-question id="attention-disorder-in-school" [index]="1"
+  <app-adhd-icd10-question id="attention-disorder-in-school" [index]="'1'" [section]="'attention-disorders'"
                            [translationKey]="'adhdIcd10.attentionDisorderInSchool'"
                            [(response)]="adhdIcd10.attentionDisorderInSchool"></app-adhd-icd10-question>
 
-  <app-adhd-icd10-question id="attention-disorder-during-play" [index]="2"
+  <app-adhd-icd10-question id="attention-disorder-during-play" [index]="'2'" [section]="'attention-disorders'"
                            [translationKey]="'adhdIcd10.attentionDisorderDuringPlay'"
                            [(response)]="adhdIcd10.attentionDisorderDuringPlay"></app-adhd-icd10-question>
 
 
-  <app-adhd-icd10-question id="hearing-disorder" [index]="3"
+  <app-adhd-icd10-question id="hearing-disorder" [index]="'3'" [section]="'attention-disorders'"
                            [translationKey]="'adhdIcd10.hearingDisorder'"
                            [(response)]="adhdIcd10.hearingDisorder"></app-adhd-icd10-question>
 
-  <app-adhd-icd10-question id="losing-things" [index]="7"
+  <app-adhd-icd10-question id="hearing-disorder1" [index]="'4'" [section]="'attention-disorders'"
+                           [translationKey]="'Dziecko często nie jest w stanie wykonać następujących po sobie instrukcji lub skończyć pracy szkolnej, zadanej pracy lub obowiązków w miejscu pracy (ale nie z powodu przeciwstawiania się (opozycyjnego zachowania) lub niezrozumienia instrukcji).'"
+                           [(response)]="adhdIcd10.completionTaskDisorder"></app-adhd-icd10-question>
+
+  <app-adhd-icd10-question id="hearing-disorder2" [index]="'5'" [section]="'attention-disorders'"
+                           [translationKey]="'Dziecko często ma trudności ze zorganizowaniem sobie pracy lub innych zajęć.'"
+                           [(response)]="adhdIcd10.difficultyOrganizingWork"></app-adhd-icd10-question>
+
+  <app-adhd-icd10-question id="hearing-disorder3" [index]="'6'" [section]="'attention-disorders'"
+                           [translationKey]="'Dziecko nie lubi, ociąga się lub unika zajęć wymagających dłuższego wysiłku umysłowego – jak nauka szkolna lub odrabianie zajęć domowych.'"
+                           [(response)]="adhdIcd10.avoidanceOfProlongedMentalExertion"></app-adhd-icd10-question>
+
+  <app-adhd-icd10-question id="losing-things" [index]="'7'" [section]="'attention-disorders'"
                            [translationKey]="'adhdIcd10.losingThings'"
                            [(response)]="adhdIcd10.losingThings"></app-adhd-icd10-question>
 
-  <app-adhd-icd10-question id="external-stimuli" [index]="8"
+  <app-adhd-icd10-question id="external-stimuli" [index]="'8'" [section]="'attention-disorders'"
                            [translationKey]="'adhdIcd10.externalStimuli'"
-                           [(response)]="adhdIcd10.externalStimuli"></app-adhd-icd10-question>
+                           [(response)]="adhdIcd10.externalStimuliDisorder"></app-adhd-icd10-question>
 
-  <app-adhd-icd10-question id="forgetful" [index]="9"
+  <app-adhd-icd10-question id="forgetful" [index]="'9'" [section]="'attention-disorders'"
                            [translationKey]="'adhdIcd10.forgetful'"
                            [(response)]="adhdIcd10.forgetful"></app-adhd-icd10-question>
 
   <div class="row mt-3">
     <div class="col-12">
-      <app-adhd-icd10-questions-summary></app-adhd-icd10-questions-summary>
+      <app-adhd-icd10-questions-summary [numberOfSymptoms]="sumAttentionDisorders()"></app-adhd-icd10-questions-summary>
     </div>
   </div>
 
   <hr/>
 
   <div class="row">
-    <h5 class="mt-3">NADRUCHLIWOŚ</h5>
+    <h5 class="mt-3">NADRUCHLIWOŚĆ</h5>
   </div>
 
-  <!--    <AdhdIcd10Question id="forgetful" name="forgetful" index="1"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-10"/>-->
+  <app-adhd-icd10-question id="nervousMovements" [index]="'1'" [section]="'hyperactivity'"
+                           [translationKey]="'Dziecko ma często nerwowe ruchy rąk lub stóp bądź nie jest w stanie usiedzieć w miejscu, często macha rękami lub nogami albo wierci się na krześle.'"
+                           [(response)]="adhdIcd10.nervousMovements"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="forgetful" name="forgetful" index="2"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-11"/>-->
+  <app-adhd-icd10-question id="childGetsUpUninvited" [index]="'2'" [section]="'hyperactivity'"
+                           [translationKey]="'Dziecko wstaje z miejsca w czasie lekcji lub w innych sytuacjach wymagających spokojnego siedzenia.'"
+                           [(response)]="adhdIcd10.childGetsUpUninvited"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="forgetful" name="forgetful" index="3"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-12"/>-->
+  <app-adhd-icd10-question id="childClimbsOnFurniture" [index]="'3'" [section]="'hyperactivity'"
+                           [translationKey]="'Dziecko często biega wkoło lub wchodzi na meble w sytuacjach, w których jest to nieaprobowane (u nastolatków lub dorosłych może być obecne tylko uczucie niepokoju).'"
+                           [(response)]="adhdIcd10.childClimbsOnFurniture"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="forgetful" name="forgetful" index="4"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-13"/>-->
+  <app-adhd-icd10-question id="excessivelyNoisy" [index]="'4'" [section]="'hyperactivity'"
+                           [translationKey]="'Dziecko często jest nadmiernie hałaśliwe w zabawie i ma trudności ze spokojnym bawieniem się.'"
+                           [(response)]="adhdIcd10.excessivelyNoisy"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="forgetful" name="forgetful" index="5"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-14"/>-->
+  <app-adhd-icd10-question id="excessivePhysicalActivity" [index]="'5'" [section]="'hyperactivity'"
+                           [translationKey]="'Dziecko często jest w ruchu; „biega jak nakręcone”. Zachowanie dziecka cechuje nadmierna aktywność ruchowa, na którą nie wpływa ani sytuacja, ani potrzeba.'"
+                           [(response)]="adhdIcd10.excessivePhysicalActivity"></app-adhd-icd10-question>
+
+
+  <div class="row mt-3">
+    <div class="col-12">
+      <app-adhd-icd10-questions-summary [numberOfSymptoms]="sumHyperactivity()"></app-adhd-icd10-questions-summary>
+    </div>
+  </div>
 
   <hr/>
 
@@ -85,32 +109,62 @@
     <h5 class="mt-3">IMPULSYWNOŚĆ</h5>
   </div>
 
-  <!--    <AdhdIcd10Question id="question-15" name="question-15" index="6"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-15"/>-->
+  <app-adhd-icd10-question id="forgetful18" [index]="'6'" [section]="'impulsiveness'"
+                           [translationKey]="'Dziecko często wyrywa się z odpowiedzią, zanim pytanie zostanie zadane do końca.'"
+                           [(response)]="adhdIcd10.forgetful"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-16" name="question-16" index="7"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-16"/>-->
+  <app-adhd-icd10-question id="forgetful181" [index]="'7'" [section]="'impulsiveness'"
+                           [translationKey]="'Dziecku często nie udaje się stać w szeregu lub poczekać na swoją kolej w grze lub sytuacji grupowej'"
+                           [(response)]="adhdIcd10.forgetful"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-17" name="question-17" index="8"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-17"/>-->
+  <app-adhd-icd10-question id="forgetful18133" [index]="'8'" [section]="'impulsiveness'"
+                           [translationKey]="'Dziecko często przerywa lub przeszkadza innym (np. wtrąca się do rozmowy lub zabawy innych osób).'"
+                           [(response)]="adhdIcd10.forgetful"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-18" name="question-18" index="9"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-18"/>-->
+  <app-adhd-icd10-question id="forgetful1813" [index]="'9'" [section]="'impulsiveness'"
+                           [translationKey]="'Dziecko często jest nadmiernie gadatliwe.'"
+                           [(response)]="adhdIcd10.forgetful"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-19" name="question-19" index="9"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-19"/>-->
+  <div class="row mt-3 mb-3">
+    <div class="col-12">
+      <app-adhd-icd10-questions-summary></app-adhd-icd10-questions-summary>
+    </div>
+  </div>
 
-  <!--    <AdhdIcd10Question id="question-20" name="question-20" index="B"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-20"/>-->
+  <app-adhd-icd10-question id="forgetful18131" [index]="'B'"
+                           [translationKey]="'Niektóre upośledzające funkcjonowanie dziecka objawy zaburzeń koncentracji uwagi lub nadpobudliwości psychoruchowej (nadruchliwości, impulsywności) ujawniły się przed 7. rokiem życia dziecka.'"
+                           [(response)]="adhdIcd10.forgetful" [isHighlighted]="false"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-21" name="question-21" index="C"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-21"/>-->
+  <app-adhd-icd10-question id="forge2tful18131" [index]="'C'"
+                           [translationKey]="'Upośledzenie funkcjonowania dziecka spowodowane tymi objawami występuje w dwóch lub więcej sytuacjach (np. w szkole i w domu).'"
+                           [(response)]="adhdIcd10.forgetful" [isHighlighted]="false"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-22" name="question-22" index="D"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-22"/>-->
+  <app-adhd-icd10-question id="forgetful181331" [index]="'D'"
+                           [translationKey]="'Stwierdza się klinicznie istotne upośledzenie funkcjonowania społecznego, zawodowego lub szkolnego (w zakresie edukacji).'"
+                           [(response)]="adhdIcd10.forgetful" [isHighlighted]="false"></app-adhd-icd10-question>
 
-  <!--    <AdhdIcd10Question id="question-23" name="question-23" index="E"-->
-  <!--                       onChange={setForgetful} translationKey="adhdIcd10.question-23"/>-->
+  <app-adhd-icd10-question id="forgetful218131" [index]="'E'"
+                           [translationKey]="'Objawy u dziecka nie występują w przebiegu przetrwałych zaburzeń rozwojowych, schizofrenii lub innych psychoz i nie można ich trafniej uznać za objawy innego zaburzenia psychicznego (np. zaburzeń nastroju, lękowych, dysocjacyjnych lub nieprawidłowej osobowości).'"
+                           [(response)]="adhdIcd10.forgetful" [isHighlighted]="false"></app-adhd-icd10-question>
+
+  <table class="table table-bordered mt-4">
+    <tbody>
+    <tr>
+      <th scope="row">Rozpoznanie dług ICD-10:</th>
+      <td>{{sumIcd10()}}</td>
+    </tr>
+    <tr>
+      <th scope="row">Rozpoznanie dług DSM-IV:</th>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p class="mt-4 mb-0"><small>© Wolańczyk, Kołakowski, 2005-2011</small></p>
+  <p class="mt-0"><small> Kwestionariusze mogą być używane jedynie do celów klinicznych. Kwestionariusz do wypełnienia podczas
+    rozmowy diagnostycznej. Kwestionariusze mogą być używane jedynie do celów klinicznych. Kwestionariusz do wypełnienia
+    podczas rozmowy diagnostycznej.
+  </small></p>
 
   <!--    <div class="row">-->
   <!--      <button type="submit" class="btn btn-primary">Submit</button>-->

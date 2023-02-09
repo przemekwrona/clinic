@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-adhd-icd10-question',
@@ -7,8 +7,10 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class AdhdIcd10QuestionComponent implements OnInit {
 
-  @Input() index: number = 0;
+  @Input() section: string = '';
+  @Input() index: string = '';
   @Input() translationKey: string = '';
+  @Input() isHighlighted: boolean = true;
 
   @Input() response: number | undefined;
   @Output() responseChange = new EventEmitter<number>();
