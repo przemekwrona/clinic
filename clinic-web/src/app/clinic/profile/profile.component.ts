@@ -81,5 +81,5 @@ export class ProfileComponent implements OnInit {
 }
 
 export enum Tabs {
-  OVERVIEW, PATIENTS, RESEARCH
+  OVERVIEW, PATIENTS, RESEARCH, REPORT
 }

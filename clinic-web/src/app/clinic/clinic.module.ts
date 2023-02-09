@@ -6,6 +6,7 @@ import { ProfileModule } from "./profile/profile.module";
 import { SharedModule } from "../shared/shared.module";
 import { PatientModule } from "./patient/patient.module";
 import { LoginService } from "../services/LoginService";
+import {QuestionnaireModule} from "./questionnaire/questionnaire.module";
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { LoginService } from "../services/LoginService";
     RouterModule,
     SharedModule,
     ProfileModule,
-    PatientModule
+    PatientModule,
+    QuestionnaireModule
   ],
   providers: [
     LoginService

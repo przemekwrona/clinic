@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-adhd-icd10-questions-summary',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdhdIcd10QuestionsSummaryComponent implements OnInit {
 
-  constructor() { }
+  @Input() numberOfSymptoms: number | null = null;
+  @Input() numberOfSymptomPoints: number | null = null;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

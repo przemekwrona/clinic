@@ -9,6 +9,7 @@
     "yourProfile": "Twój Profil",
     "yourPatients": "Twoi Pacienci",
     "yourResearches": "Twoje Badania",
+    "yourReports": "Twoje Kwestionariusze",
     "login": "Zaloguj się",
     "logout": "Zarejestruj się"
   },
@@ -23,7 +24,8 @@
   "profile": {
     "overviewTab": "Podgląd",
     "patientsTab": "Pacienci",
-    "researchTab": "Badania"
+    "researchTab": "Badania",
+    "reportTab": "Kwestionariusze"
   },
   "adhdIcd10": {
     "answers": {
